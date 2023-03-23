@@ -1,13 +1,12 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - CameraLook
+    - FloatingJoystick
     - MovementPlayer
     Cinemachine.dll:
+    - Cinemachine.Cinemachine3rdPersonFollow
     - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachineComposer
-    - Cinemachine.CinemachineFreeLook
-    - Cinemachine.CinemachineOrbitalTransposer
     - Cinemachine.CinemachinePipeline
     - Cinemachine.CinemachineVirtualCamera
     Unity.InputSystem.dll:
@@ -31,13 +30,9 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
   serializedClasses:
     Cinemachine:
-    - Cinemachine.AxisState
-    - Cinemachine.AxisState/Recentering
     - Cinemachine.CinemachineBlendDefinition
     - Cinemachine.CinemachineBrain/BrainEvent
     - Cinemachine.CinemachineBrain/VcamActivatedEvent
-    - Cinemachine.CinemachineFreeLook/Orbit
-    - Cinemachine.CinemachineOrbitalTransposer/Heading
     - Cinemachine.CinemachineVirtualCameraBase/TransitionParams
     - Cinemachine.LensSettings
     Unity.InputSystem:
@@ -71,6 +66,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
@@ -86,35 +83,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1520}
     - Class: 114
-      Script: {instanceID: 1742}
+      Script: {instanceID: 1744}
     - Class: 114
-      Script: {instanceID: 1756}
+      Script: {instanceID: 2644}
     - Class: 114
-      Script: {instanceID: 2638}
+      Script: {instanceID: 2714}
     - Class: 114
-      Script: {instanceID: 2708}
+      Script: {instanceID: 2782}
     - Class: 114
-      Script: {instanceID: 2776}
+      Script: {instanceID: 2928}
     - Class: 114
-      Script: {instanceID: 2922}
+      Script: {instanceID: 3078}
     - Class: 114
-      Script: {instanceID: 3942}
+      Script: {instanceID: 3948}
     - Class: 114
-      Script: {instanceID: 4596}
+      Script: {instanceID: 4604}
     - Class: 114
-      Script: {instanceID: 5076}
+      Script: {instanceID: 5084}
     - Class: 114
-      Script: {instanceID: 5356}
+      Script: {instanceID: 6064}
     - Class: 114
-      Script: {instanceID: 5932}
+      Script: {instanceID: 6096}
     - Class: 114
-      Script: {instanceID: 6048}
+      Script: {instanceID: 7038}
     - Class: 114
-      Script: {instanceID: 6080}
+      Script: {instanceID: 7448}
     - Class: 114
-      Script: {instanceID: 7020}
-    - Class: 114
-      Script: {instanceID: 7766}
+      Script: {instanceID: 7788}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 137
@@ -184,7 +179,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+      Hash: 57a783ff9807021324521271b00c9da9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MovementPlayer
@@ -244,6 +239,12 @@ ScriptsOnlyBuild:
     className: CinemachineCollider
   - hash:
       serializedVersion: 2
+      Hash: ce669872a2be11bc686ea22961d8a3bb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FixedJoystick
+  - hash:
+      serializedVersion: 2
       Hash: bd50beb95120324d8c4e8386692b6e82
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -254,6 +255,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnTriggerEnterMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 9dac16f3efc511835ac976dfae55f580
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: VariableJoystick
   - hash:
       serializedVersion: 2
       Hash: 800c50acba124432abb4cf0d47202e06
@@ -826,6 +833,12 @@ ScriptsOnlyBuild:
     className: UnityOnEndDragMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 824e8d4cb47ffd88ddf959dbd4526585
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DynamicJoystick
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -890,6 +903,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: HorizontalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: ce669872a2be11bc686ea22961d8a3bb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Joystick
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1214,6 +1233,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: EventTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: ce669872a2be11bc686ea22961d8a3bb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FloatingJoystick
   - hash:
       serializedVersion: 2
       Hash: eeb356fa33eec10332ebc7e468fecb95

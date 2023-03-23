@@ -7,6 +7,7 @@ public class MovementPlayer : MonoBehaviour
     private CharacterController characterController;
     public float speed = 0;
     private Playermain input;
+    public FloatingJoystick joyStick;
 
     private void Awake()
     {
@@ -31,8 +32,7 @@ public class MovementPlayer : MonoBehaviour
     void Update()
     {
 
-        Vector2 moveMentInput = input.PlayerMain.Move.ReadValue<Vector2>();
-        Vector3 movement = new Vector3(moveMentInput.x, 0, moveMentInput.y);
+        Vector3 movement = new Vector3(joyStick.Horizontal, 0, joyStick.Vertical);
 
 
         if (movement.magnitude >= 0.1f)

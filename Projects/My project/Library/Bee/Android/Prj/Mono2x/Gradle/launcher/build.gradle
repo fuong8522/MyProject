@@ -16,7 +16,7 @@ android {
     defaultConfig {
         minSdkVersion 22
         targetSdkVersion 33
-        applicationId 'com.DefaultCompany.Myproject'
+        applicationId 'com.DefaultCompany.Test'
         ndk {
             abiFilters 'armeabi-v7a'
         }
