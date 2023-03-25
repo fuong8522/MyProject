@@ -14,6 +14,12 @@ ScriptsOnlyBuild:
     - UnityEngine.InputSystem.UI.InputSystemUIInputModule
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -55,11 +61,15 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
       Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
@@ -68,27 +78,27 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1522}
+      Script: {instanceID: 1520}
     - Class: 114
-      Script: {instanceID: 1746}
+      Script: {instanceID: 1744}
     - Class: 114
-      Script: {instanceID: 2716}
+      Script: {instanceID: 2714}
     - Class: 114
-      Script: {instanceID: 2930}
+      Script: {instanceID: 2928}
     - Class: 114
-      Script: {instanceID: 3950}
+      Script: {instanceID: 3948}
     - Class: 114
-      Script: {instanceID: 5126}
+      Script: {instanceID: 5122}
     - Class: 114
-      Script: {instanceID: 6096}
+      Script: {instanceID: 6092}
     - Class: 114
-      Script: {instanceID: 7036}
+      Script: {instanceID: 7032}
     - Class: 114
-      Script: {instanceID: 7448}
+      Script: {instanceID: 7442}
     - Class: 114
-      Script: {instanceID: 7788}
+      Script: {instanceID: 7782}
     - Class: 114
-      Script: {instanceID: 8116}
+      Script: {instanceID: 8110}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 137
@@ -158,7 +168,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 57a783ff9807021324521271b00c9da9
+      Hash: fecb051885ff269c81a7ce13b8032ebb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MovementPlayer
@@ -800,7 +810,7 @@ ScriptsOnlyBuild:
     className: RemoteInputPlayerConnection
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: c521783deb3ce6e483057bc1509cfff5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TouchFieldController
@@ -1316,7 +1326,7 @@ ScriptsOnlyBuild:
     className: UnityOnMouseOverMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 1f88d9482e0b8204062e5beeab2b7920
+      Hash: 8094933403eadc11af05c98e72f0b076
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CamManager

@@ -1,10 +1,28 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows;
 
 public class CamManager : MonoBehaviour
 {
+
+    private static CamManager instance = null;
+
+
+    public static CamManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<CamManager>();
+            }
+            return instance;
+        }
+    }
+
+
+
     //The object the camera will follow
     public GameObject player;
     public Transform cameraPivot;
@@ -19,8 +37,8 @@ public class CamManager : MonoBehaviour
     private Vector3 cameraFollowVelocity = Vector3.zero;
 
     //Camera looking up and down, left and right
-    private float lookAngle;
-    private float pivotAngle;
+    public float lookAngle = 0;
+    public float pivotAngle = 0;
 
     //Camera rotation limit
     private float minimum = -35f;
@@ -31,6 +49,15 @@ public class CamManager : MonoBehaviour
     private void Awake()
     {
         targetTransform = player.transform;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
 
@@ -39,32 +66,31 @@ public class CamManager : MonoBehaviour
         FollowTarget();
         RorateCamera();
     }
-
     //Camera follow player
     public void FollowTarget()
     {
         Vector3 targetPosition = Vector3.SmoothDamp(transform.position, targetTransform.position,ref cameraFollowVelocity,cameraFollowSpeed);
         transform.position = targetPosition;
     }
-
     //Rotate Camera
-    public void RorateCamera()
-    {
-        lookAngle += touchpadField.direction.x * lookLeftRight * Time.deltaTime;
-        pivotAngle -= touchpadField.direction.y * lookUpDown * Time.deltaTime;
-        pivotAngle = Mathf.Clamp(pivotAngle, minimum,maximum);
 
-        
-        //Look left and right
-        Vector3 rotation = Vector3.zero;
-        rotation.y = lookAngle;
-        Quaternion targetRotation = Quaternion.Euler(rotation);
-        transform.rotation = targetRotation;
+     public void RorateCamera()
+     {
+         lookAngle = touchpadField.direction.x;
+        pivotAngle = touchpadField.direction.y;
+         pivotAngle = Mathf.Clamp(pivotAngle, minimum, maximum);
 
-        //Look up and down
-        rotation = Vector3.zero;
-        rotation.x = pivotAngle;
-        targetRotation = Quaternion.Euler(rotation);
-        cameraPivot.localRotation = targetRotation;
-    }
+
+         //Look left and right
+         Vector3 rotation = Vector3.zero;
+         rotation.y = lookAngle * lookUpDown;
+         Quaternion targetRotation = Quaternion.Euler(rotation);
+         transform.rotation = targetRotation;
+
+         //Look up and down
+         rotation = Vector3.zero;
+         rotation.x = -pivotAngle * lookUpDown;
+         targetRotation = Quaternion.Euler(rotation);
+         cameraPivot.localRotation = targetRotation;
+     }
 }

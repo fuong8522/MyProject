@@ -496,14 +496,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: 2, z: -6}
+  m_LocalRotation: {x: 0.22495107, y: 0, z: 0, w: 0.9743701}
+  m_LocalPosition: {x: 0, y: 1, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 27672923}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 26, y: 0, z: 0}
 --- !u!1001 &1329288076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -678,6 +678,8 @@ MonoBehaviour:
   cameraPivot: {fileID: 27672923}
   touchpadField: {fileID: 825421853}
   cameraFollowSpeed: 0.2
+  lookAngle: 0
+  pivotAngle: 0
   lookUpDown: 0.5
   lookLeftRight: 1
 --- !u!1001 &1621519432
@@ -977,6 +979,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3139323704979212316, guid: 24d28c33f81bda348a27801eab871412, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139323704979212316, guid: 24d28c33f81bda348a27801eab871412, type: 3}
       propertyPath: joyStick
       value: 
       objectReference: {fileID: 565581004}
@@ -984,5 +990,21 @@ PrefabInstance:
       propertyPath: cameraManager
       value: 
       objectReference: {fileID: 1576281769}
+    - target: {fileID: 3139323704979212316, guid: 24d28c33f81bda348a27801eab871412, type: 3}
+      propertyPath: turnSmoothTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139323705280801316, guid: 24d28c33f81bda348a27801eab871412, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 1ed0a67d0b59cd149b0d09c0bb46efcc, type: 2}
+    - target: {fileID: 3139323705288087554, guid: 24d28c33f81bda348a27801eab871412, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490608398037667576, guid: 24d28c33f81bda348a27801eab871412, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24d28c33f81bda348a27801eab871412, type: 3}
