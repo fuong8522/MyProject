@@ -57,6 +57,7 @@ public class MovementPlayer : MonoBehaviour
             float targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg + cameraManager.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f,angle, 0f);
+
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             characterController.Move(moveDirection.normalized * Time.deltaTime * speed);
         }
@@ -64,7 +65,5 @@ public class MovementPlayer : MonoBehaviour
         {
             animator.SetBool("Walk", false);
         }
-
     }
-
 }

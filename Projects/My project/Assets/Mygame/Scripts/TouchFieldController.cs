@@ -20,7 +20,6 @@ public class TouchFieldController : MonoBehaviour, IPointerDownHandler, IPointer
     public void OnPointerUp(PointerEventData eventData)
     {
         isPointerDown = false;
-        //direction = Vector2.zero;
     }
 
     public void OnDrag(PointerEventData eventData)

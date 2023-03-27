@@ -5,10 +5,7 @@ using UnityEngine.Windows;
 
 public class CamManager : MonoBehaviour
 {
-
     private static CamManager instance = null;
-
-
     public static CamManager Instance
     {
         get
@@ -20,7 +17,6 @@ public class CamManager : MonoBehaviour
             return instance;
         }
     }
-
 
 
     //The object the camera will follow
@@ -41,10 +37,9 @@ public class CamManager : MonoBehaviour
     public float pivotAngle = 0;
 
     //Camera rotation limit
-    private float minimum = -35f;
-    private float maximum = 35f;
-    public float lookUpDown = 0.5f;
-    public float lookLeftRight = 1f;
+    private float minimum = -85f;
+    private float maximum = 85f;
+    public float camSensitive = 0.5f;
 
     private void Awake()
     {
@@ -60,7 +55,6 @@ public class CamManager : MonoBehaviour
         }
     }
 
-
     private void LateUpdate()
     {
         FollowTarget();
@@ -69,28 +63,27 @@ public class CamManager : MonoBehaviour
     //Camera follow player
     public void FollowTarget()
     {
-        Vector3 targetPosition = Vector3.SmoothDamp(transform.position, targetTransform.position,ref cameraFollowVelocity,cameraFollowSpeed);
+        Vector3 targetPosition = Vector3.SmoothDamp(transform.position, targetTransform.position, ref cameraFollowVelocity, cameraFollowSpeed);
         transform.position = targetPosition;
     }
     //Rotate Camera
 
-     public void RorateCamera()
-     {
-         lookAngle = touchpadField.direction.x;
+    public void RorateCamera()
+    {
+        lookAngle = touchpadField.direction.x;
         pivotAngle = touchpadField.direction.y;
-         pivotAngle = Mathf.Clamp(pivotAngle, minimum, maximum);
+        pivotAngle = Mathf.Clamp(pivotAngle, minimum, maximum);
 
+        //Look left and right
+        Vector3 rotation = Vector3.zero;
+        rotation.y = lookAngle * camSensitive;
+        Quaternion targetRotation = Quaternion.Euler(rotation);
+        transform.rotation = targetRotation;
 
-         //Look left and right
-         Vector3 rotation = Vector3.zero;
-         rotation.y = lookAngle * lookUpDown;
-         Quaternion targetRotation = Quaternion.Euler(rotation);
-         transform.rotation = targetRotation;
-
-         //Look up and down
-         rotation = Vector3.zero;
-         rotation.x = -pivotAngle * lookUpDown;
-         targetRotation = Quaternion.Euler(rotation);
-         cameraPivot.localRotation = targetRotation;
-     }
+        //Look up and down
+        rotation = Vector3.zero;
+        rotation.x = -pivotAngle * camSensitive;
+        targetRotation = Quaternion.Euler(rotation);
+        cameraPivot.localRotation = targetRotation;
+    }
 }
