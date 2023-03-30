@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MovementPlayer : MonoBehaviour
 {
     private CharacterController characterController;
     public float speed = 10;
     public FloatingJoystick joyStick;
-    
+
+    public bool run = true;
     private Animator animator;
 
     public Transform cameraManager;
@@ -50,9 +52,10 @@ public class MovementPlayer : MonoBehaviour
     {
         Vector3 movement = new Vector3(joyStick.Horizontal, 0, joyStick.Vertical).normalized;
 
-        if (movement.magnitude >= 0.1f)
+        if (movement.magnitude >= 0.1f && run)
         {
             animator.SetBool("Walk", true);
+            animator.SetBool("Idle", false);
 
             float targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg + cameraManager.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
@@ -65,5 +68,11 @@ public class MovementPlayer : MonoBehaviour
         {
             animator.SetBool("Walk", false);
         }
+        animator.SetBool("Idle", true);
+    }
+
+    public void onPunchButton()
+    {
+        animator.SetTrigger("Punch");
     }
 }

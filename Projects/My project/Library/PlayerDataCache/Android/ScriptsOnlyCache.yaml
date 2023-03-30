@@ -5,6 +5,16 @@ ScriptsOnlyBuild:
     - FloatingJoystick
     - MovementPlayer
     - TouchFieldController
+    Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
+    - UnityEditor.Tilemaps.SceneViewGridManager
+    - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
+    - UnityEditor.Tilemaps.TileDragAndDropManager
+    - UnityEditor.Tilemaps.TilemapEditorToolPreferences
+    - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.InputSystem.dll:
     - UnityEngine.InputSystem.InputActionAsset
     - UnityEngine.InputSystem.InputActionReference
@@ -25,6 +35,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateEditor
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
@@ -33,6 +44,7 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
@@ -58,15 +70,25 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteGlyph
     - TMPro.TMP_Style
     UnityEngine.CoreModule:
+    - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.Events.PersistentListenerMode
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
     - UnityEngine.TextCore.Glyph
     - UnityEngine.TextCore.GlyphMetrics
     - UnityEngine.TextCore.GlyphRect
     UnityEngine.UI:
+    - UnityEngine.UI.AnimationTriggers
+    - UnityEngine.UI.Button/ButtonClickedEvent
+    - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
-  methodsToPreserve: []
+    - UnityEngine.UI.Navigation
+    - UnityEngine.UI.SpriteState
+  methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: MovementPlayer
+    methodName: onPunchButton
   sceneClasses:
     Assets/Mygame/Scenes/MainScene.unity:
     - Class: 1
@@ -106,35 +128,37 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1522}
+      Script: {instanceID: 1546}
     - Class: 114
-      Script: {instanceID: 1746}
+      Script: {instanceID: 1770}
     - Class: 114
-      Script: {instanceID: 2240}
+      Script: {instanceID: 2264}
     - Class: 114
-      Script: {instanceID: 2716}
+      Script: {instanceID: 2740}
     - Class: 114
-      Script: {instanceID: 2930}
+      Script: {instanceID: 2954}
     - Class: 114
-      Script: {instanceID: 3950}
+      Script: {instanceID: 3270}
     - Class: 114
-      Script: {instanceID: 4398}
+      Script: {instanceID: 3974}
     - Class: 114
-      Script: {instanceID: 4686}
+      Script: {instanceID: 4422}
     - Class: 114
-      Script: {instanceID: 5124}
+      Script: {instanceID: 4710}
     - Class: 114
-      Script: {instanceID: 5484}
+      Script: {instanceID: 5148}
     - Class: 114
-      Script: {instanceID: 6094}
+      Script: {instanceID: 5508}
     - Class: 114
-      Script: {instanceID: 7034}
+      Script: {instanceID: 6118}
     - Class: 114
-      Script: {instanceID: 7444}
+      Script: {instanceID: 7058}
     - Class: 114
-      Script: {instanceID: 7784}
+      Script: {instanceID: 7468}
     - Class: 114
-      Script: {instanceID: 8112}
+      Script: {instanceID: 7808}
+    - Class: 114
+      Script: {instanceID: 8136}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -206,7 +230,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: fecb051885ff269c81a7ce13b8032ebb
+      Hash: e754535690c7ff206f6537c9714998e2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MovementPlayer

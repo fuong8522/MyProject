@@ -41,6 +41,7 @@ public class CamManager : MonoBehaviour
     private float maximum = 85f;
     public float camSensitive = 0.5f;
 
+
     private void Awake()
     {
         targetTransform = player.transform;
@@ -53,6 +54,7 @@ public class CamManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
 
     private void LateUpdate()
