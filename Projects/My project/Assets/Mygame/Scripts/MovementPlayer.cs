@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,7 +9,6 @@ public class MovementPlayer : MonoBehaviour
     public float speed = 10;
     public FloatingJoystick joyStick;
 
-    public bool run = true;
     private Animator animator;
 
     public Transform cameraManager;
@@ -52,27 +51,40 @@ public class MovementPlayer : MonoBehaviour
     {
         Vector3 movement = new Vector3(joyStick.Horizontal, 0, joyStick.Vertical).normalized;
 
-        if (movement.magnitude >= 0.1f && run)
+        if (movement.magnitude >= 0.1f)
         {
-            animator.SetBool("Walk", true);
-            animator.SetBool("Idle", false);
-
+            OnWalkTrue();
+            //Tính góc xoay
             float targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg + cameraManager.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f,angle, 0f);
-
+            //Xoay theo hướng di chuyển
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             characterController.Move(moveDirection.normalized * Time.deltaTime * speed);
         }
         else
         {
-            animator.SetBool("Walk", false);
+            OnWalkFalse();
         }
-        animator.SetBool("Idle", true);
+        OnIdle();
     }
 
-    public void onPunchButton()
+    public void OnPunchButton()
     {
         animator.SetTrigger("Punch");
     }
+    public void OnIdle()
+    {
+        animator.SetBool("Idle", true);
+    }
+    public void OnWalkTrue()
+    {
+        animator.SetBool("Walk", true);
+    }
+
+    public void OnWalkFalse()
+    {
+        animator.SetBool("Walk", false);
+    }
+
 }

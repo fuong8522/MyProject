@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - CamManager
+    - EnemyFollow
     - FloatingJoystick
     - MovementPlayer
     - TouchFieldController
@@ -35,7 +36,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateEditor
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
@@ -88,7 +88,7 @@ ScriptsOnlyBuild:
   methodsToPreserve:
   - assembly: Assembly-CSharp
     fullTypeName: MovementPlayer
-    methodName: onPunchButton
+    methodName: OnPunchButton
   sceneClasses:
     Assets/Mygame/Scenes/MainScene.unity:
     - Class: 1
@@ -111,6 +111,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -130,44 +134,50 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1546}
     - Class: 114
-      Script: {instanceID: 1770}
+      Script: {instanceID: 1774}
     - Class: 114
-      Script: {instanceID: 2264}
+      Script: {instanceID: 2284}
     - Class: 114
-      Script: {instanceID: 2740}
+      Script: {instanceID: 2774}
     - Class: 114
-      Script: {instanceID: 2954}
+      Script: {instanceID: 2988}
     - Class: 114
-      Script: {instanceID: 3270}
+      Script: {instanceID: 3308}
     - Class: 114
-      Script: {instanceID: 3974}
+      Script: {instanceID: 4034}
     - Class: 114
-      Script: {instanceID: 4422}
+      Script: {instanceID: 4492}
     - Class: 114
-      Script: {instanceID: 4710}
+      Script: {instanceID: 4782}
     - Class: 114
-      Script: {instanceID: 5148}
+      Script: {instanceID: 5236}
     - Class: 114
-      Script: {instanceID: 5508}
+      Script: {instanceID: 5598}
     - Class: 114
-      Script: {instanceID: 6118}
+      Script: {instanceID: 6218}
     - Class: 114
-      Script: {instanceID: 7058}
+      Script: {instanceID: 7180}
     - Class: 114
-      Script: {instanceID: 7468}
+      Script: {instanceID: 7598}
     - Class: 114
-      Script: {instanceID: 7808}
+      Script: {instanceID: 7944}
     - Class: 114
-      Script: {instanceID: 8136}
+      Script: {instanceID: 8280}
+    - Class: 114
+      Script: {instanceID: 26164}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 137
       Script: {instanceID: 0}
     - Class: 143
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 195
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
@@ -178,6 +188,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 238
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -230,7 +242,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: e754535690c7ff206f6537c9714998e2
+      Hash: fecb051885ff269c81a7ce13b8032ebb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MovementPlayer
@@ -1470,6 +1482,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: a647b76f457f61fd6c304277398d5aa6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyFollow
   platform: 13
   scenePathNames:
   - Assets/Mygame/Scenes/MainScene.unity

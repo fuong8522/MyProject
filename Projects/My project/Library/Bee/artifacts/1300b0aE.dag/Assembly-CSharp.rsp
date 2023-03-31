@@ -358,6 +358,7 @@
 "Assets/Mygame/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs"
 "Assets/Mygame/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs"
 "Assets/Mygame/Scripts/CamManager.cs"
+"Assets/Mygame/Scripts/Enemy/EnemyFollow.cs"
 "Assets/Mygame/Scripts/MovementPlayer.cs"
 "Assets/Mygame/Scripts/TouchFieldController.cs"
 -langversion:9.0
