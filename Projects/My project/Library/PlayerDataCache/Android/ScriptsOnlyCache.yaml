@@ -113,8 +113,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
-    - Class: 65
-      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -132,39 +130,39 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1546}
+      Script: {instanceID: 1548}
     - Class: 114
-      Script: {instanceID: 1774}
+      Script: {instanceID: 1776}
     - Class: 114
-      Script: {instanceID: 2284}
+      Script: {instanceID: 2286}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2776}
     - Class: 114
-      Script: {instanceID: 2988}
+      Script: {instanceID: 2984}
     - Class: 114
-      Script: {instanceID: 3308}
+      Script: {instanceID: 2992}
     - Class: 114
-      Script: {instanceID: 4034}
+      Script: {instanceID: 3312}
     - Class: 114
-      Script: {instanceID: 4492}
+      Script: {instanceID: 4038}
     - Class: 114
-      Script: {instanceID: 4782}
+      Script: {instanceID: 4496}
     - Class: 114
-      Script: {instanceID: 5236}
+      Script: {instanceID: 4786}
     - Class: 114
-      Script: {instanceID: 5598}
+      Script: {instanceID: 5240}
     - Class: 114
-      Script: {instanceID: 6218}
+      Script: {instanceID: 5602}
     - Class: 114
-      Script: {instanceID: 7180}
+      Script: {instanceID: 6222}
     - Class: 114
-      Script: {instanceID: 7598}
+      Script: {instanceID: 7184}
     - Class: 114
-      Script: {instanceID: 7944}
+      Script: {instanceID: 7602}
     - Class: 114
-      Script: {instanceID: 8280}
+      Script: {instanceID: 7948}
     - Class: 114
-      Script: {instanceID: 26164}
+      Script: {instanceID: 8284}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -438,6 +436,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestRunner.Utils
     className: TestRunCallbackListener
+  - hash:
+      serializedVersion: 2
+      Hash: a647b76f457f61fd6c304277398d5aa6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyFollow
   - hash:
       serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
@@ -1482,12 +1486,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: a647b76f457f61fd6c304277398d5aa6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EnemyFollow
   platform: 13
   scenePathNames:
   - Assets/Mygame/Scenes/MainScene.unity

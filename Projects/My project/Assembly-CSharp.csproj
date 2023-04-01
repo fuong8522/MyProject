@@ -59,12 +59,12 @@
     <Compile Include="Assets\Mygame\Scripts\MovementPlayer.cs" />
     <Compile Include="Assets\Mygame\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Mygame\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\Mygame\Scripts\Enemy\EnemyFollow.cs" />
     <Compile Include="Assets\Mygame\Scripts\TouchFieldController.cs" />
     <Compile Include="Assets\Mygame\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Mygame\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Mygame\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Mygame\Scripts\CamManager.cs" />
-    <Compile Include="Assets\Mygame\Scripts\Enemy\EnemyFollow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

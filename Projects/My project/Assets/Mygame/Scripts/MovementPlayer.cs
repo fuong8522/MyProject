@@ -46,6 +46,10 @@ public class MovementPlayer : MonoBehaviour
         {
             transform.position = new Vector3(-boundary, transform.position.y, transform.position.z);
         }
+        if (transform.position.y > -0.2f)
+        {
+            transform.position = new Vector3(transform.position.x,-0.2f, transform.position.z);
+        }
     }
     public void Movement()
     {
