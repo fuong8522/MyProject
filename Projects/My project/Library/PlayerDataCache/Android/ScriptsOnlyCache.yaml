@@ -113,6 +113,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -240,7 +242,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: fecb051885ff269c81a7ce13b8032ebb
+      Hash: ff70c4a3f85a8e410c1b2d43c1d1bd99
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MovementPlayer
@@ -438,7 +440,7 @@ ScriptsOnlyBuild:
     className: TestRunCallbackListener
   - hash:
       serializedVersion: 2
-      Hash: a647b76f457f61fd6c304277398d5aa6
+      Hash: d6007a6d8e05ac34bf6f911da2c6e94b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyFollow

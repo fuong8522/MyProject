@@ -10,6 +10,9 @@ public class MovementPlayer : MonoBehaviour
     public FloatingJoystick joyStick;
 
     private Animator animator;
+    public bool punch = false;
+
+    public GameObject baseBall;
 
     public Transform cameraManager;
     public float rotationSpeed = 3.5f;
@@ -17,7 +20,8 @@ public class MovementPlayer : MonoBehaviour
     private Quaternion playerRotation;
 
     //Constrain left right
-    private float boundary = 6.5f;
+    private float boundaryLeftRight = 6.5f;
+    private float boundaryUPDown = 0.2f;
 
     public float turnSmoothTime = 0.5f;
     private float turnSmoothVelocity;
@@ -37,18 +41,23 @@ public class MovementPlayer : MonoBehaviour
 
     public void ConstrainMovement()
     {
-        if (transform.position.x > boundary)
+        //Giới hạn trái phải
+        if (transform.position.x > boundaryLeftRight)
         {
-            transform.position = new Vector3(boundary, transform.position.y, transform.position.z);
+            transform.position = new Vector3(boundaryLeftRight, transform.position.y, transform.position.z);
         }
-
-        if (transform.position.x < -boundary)
+        if (transform.position.x < -boundaryLeftRight)
         {
-            transform.position = new Vector3(-boundary, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-boundaryLeftRight, transform.position.y, transform.position.z);
         }
-        if (transform.position.y > -0.2f)
+        //Giới hạn trên dưới
+        if (transform.position.y > -boundaryUPDown)
         {
-            transform.position = new Vector3(transform.position.x,-0.2f, transform.position.z);
+            transform.position = new Vector3(transform.position.x,-boundaryUPDown, transform.position.z);
+        }
+        if (transform.position.y < -boundaryUPDown)
+        {
+            transform.position = new Vector3(transform.position.x,-boundaryUPDown, transform.position.z);
         }
     }
     public void Movement()
@@ -76,7 +85,9 @@ public class MovementPlayer : MonoBehaviour
     public void OnPunchButton()
     {
         animator.SetTrigger("Punch");
+        StartCoroutine(OnOffBoxCollider());
     }
+
     public void OnIdle()
     {
         animator.SetBool("Idle", true);
@@ -91,4 +102,11 @@ public class MovementPlayer : MonoBehaviour
         animator.SetBool("Walk", false);
     }
 
+    IEnumerator OnOffBoxCollider()
+    {
+        baseBall.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        baseBall.SetActive(false);
+
+    }
 }

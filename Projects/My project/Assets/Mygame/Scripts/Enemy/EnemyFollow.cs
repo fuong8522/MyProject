@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyFollow : MonoBehaviour
 {
     public Animator animator;
     public NavMeshAgent agent;
     public Transform player;
+    private float health = 6f;
     private float zFirst = 0;
 
+    public Button punch;
     private float testZom = 0;
 
     void Start()
@@ -45,5 +49,18 @@ public class EnemyFollow : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Weapon"))
+        {
+            health--;
+            if(health == 0)
+            {
+                animator.SetTrigger("Death");
+                agent.speed= 0;
+                testZom = 0;
+            }
+        }
+    }
 
 }
