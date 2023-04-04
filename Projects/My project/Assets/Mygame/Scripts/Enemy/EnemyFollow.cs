@@ -10,11 +10,13 @@ public class EnemyFollow : MonoBehaviour
     public Animator animator;
     public NavMeshAgent agent;
     public Transform player;
+
     private float health = 6f;
     private float zFirst = 0;
 
     public Button punch;
     private float testZom = 0;
+
 
     void Start()
     {
@@ -40,8 +42,9 @@ public class EnemyFollow : MonoBehaviour
         else
         {
             animator.SetBool("Walk", false);
-            //animator.SetTrigger("Collision");
         }
+
+        //Zombie attack player
         if((animator.GetBool("Walk") == false) && testZom > 1)
         {
             transform.forward = player.transform.position - transform.position;
@@ -49,18 +52,36 @@ public class EnemyFollow : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if(other.gameObject.CompareTag("Weapon"))
+        if (collision.gameObject.CompareTag("Weapon"))
         {
             health--;
-            if(health == 0)
+            Debug.Log(health);
+            if (health == 0)
             {
                 animator.SetTrigger("Death");
-                agent.speed= 0;
                 testZom = 0;
+                agent.speed = 0;
+                StartCoroutine(DelayDisActiveZombie());
             }
         }
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Weapon"))
+        {
+            MovementPlayer.Instance.baseBall.SetActive(false);
+        }
+    }
+
+    //Delay zombie disappear
+    IEnumerator DelayDisActiveZombie()
+    {
+        yield return new WaitForSeconds(10f);
+        gameObject.SetActive(false); 
+    }
 }

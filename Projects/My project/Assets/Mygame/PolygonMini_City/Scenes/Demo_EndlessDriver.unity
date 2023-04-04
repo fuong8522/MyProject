@@ -1485,6 +1485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Background_City_03 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1005353422447080, guid: b5091c091ab429a4d8ba4e873025c1cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4672027339232584, guid: b5091c091ab429a4d8ba4e873025c1cf, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1671,6 +1675,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 823406533}
     m_Modifications:
+    - target: {fileID: 1005353422447080, guid: b5091c091ab429a4d8ba4e873025c1cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4672027339232584, guid: b5091c091ab429a4d8ba4e873025c1cf, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2119,6 +2127,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Background_City_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1005353422447080, guid: b5091c091ab429a4d8ba4e873025c1cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4672027339232584, guid: b5091c091ab429a4d8ba4e873025c1cf, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2267,6 +2279,7 @@ Transform:
   - {fileID: 2144115071}
   - {fileID: 1611594835}
   - {fileID: 348555183}
+  - {fileID: 1386417657}
   - {fileID: 268448802}
   - {fileID: 1891499034}
   - {fileID: 2060570018}
@@ -2274,7 +2287,6 @@ Transform:
   - {fileID: 1635793845}
   - {fileID: 908564523}
   - {fileID: 253207996}
-  - {fileID: 1386417657}
   - {fileID: 987658785}
   - {fileID: 1996144549}
   - {fileID: 1646514819}
@@ -4940,7 +4952,7 @@ Transform:
   - {fileID: 954549966}
   - {fileID: 1673560844}
   m_Father: {fileID: 823406533}
-  m_RootOrder: 76
+  m_RootOrder: 69
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6}
 --- !u!1001 &1493627439
 PrefabInstance:
@@ -6206,6 +6218,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 823406533}
     m_Modifications:
+    - target: {fileID: 1193806990888404, guid: 83a1cd78257cf8745bfb091b21db28de, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4404282731496076, guid: 83a1cd78257cf8745bfb091b21db28de, type: 3}
       propertyPath: m_RootOrder
       value: 3

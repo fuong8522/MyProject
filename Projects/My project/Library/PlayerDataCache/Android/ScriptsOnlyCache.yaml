@@ -113,6 +113,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 74
@@ -242,7 +244,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: ff70c4a3f85a8e410c1b2d43c1d1bd99
+      Hash: 9085da1e7e44ec4195fc66320315a1b2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MovementPlayer

@@ -5,6 +5,20 @@ using UnityEngine.EventSystems;
 
 public class MovementPlayer : MonoBehaviour
 {
+    private static MovementPlayer instance = null;
+    public static MovementPlayer Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<MovementPlayer>();
+            }
+            return instance;
+        }
+    }
+
+    public GameObject uiPunch;
     private CharacterController characterController;
     public float speed = 10;
     public FloatingJoystick joyStick;
@@ -85,7 +99,7 @@ public class MovementPlayer : MonoBehaviour
     public void OnPunchButton()
     {
         animator.SetTrigger("Punch");
-        StartCoroutine(OnOffBoxCollider());
+        StartCoroutine(OnOffAnimationZombie());
     }
 
     public void OnIdle()
@@ -101,12 +115,12 @@ public class MovementPlayer : MonoBehaviour
     {
         animator.SetBool("Walk", false);
     }
-
-    IEnumerator OnOffBoxCollider()
+    IEnumerator OnOffAnimationZombie()
     {
         baseBall.SetActive(true);
-        yield return new WaitForSeconds(0.3f);
-        baseBall.SetActive(false);
-
+        uiPunch.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        uiPunch.SetActive(false);
     }
+
 }
