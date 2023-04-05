@@ -7,45 +7,51 @@ using UnityEngine.UI;
 
 public class EnemyFollow : MonoBehaviour
 {
-    public Animator animator;
-    public NavMeshAgent agent;
-    public Transform player;
 
+    private Transform player;
+    private NavMeshAgent agent;
+    private CapsuleCollider capsuleCollider;
+    private Animator animator;
+    private bool deadth;
     private float health = 6f;
-    private float zFirst = 0;
+    private float lastPositionZ;
 
-    public Button punch;
-    private float testZom = 0;
 
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        agent = GetComponent<NavMeshAgent>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
+        lastPositionZ = transform.position.z;
         animator = GetComponent<Animator>();
+        deadth = false;
     }
 
     void Update()
     {
-        OnAnimationZombie();
+        OnAnimationZombieWalk();
+        NavMove();
+        OnAnimationAttack();
     }
 
-    public void OnAnimationZombie()
+    public void OnAnimationZombieWalk()
     {
-
-        agent.SetDestination(player.position);
-        float zLast = transform.position.z;
-        if (zLast > zFirst || zLast < zFirst)
+        if (transform.position.z != lastPositionZ)
         {
             animator.SetBool("Walk", true);
-            zFirst = zLast;
-            testZom += Time.deltaTime;
         }
         else
         {
             animator.SetBool("Walk", false);
         }
 
+        lastPositionZ = transform.position.z;
+    }
+    public void OnAnimationAttack()
+    {
         //Zombie attack player
-        if((animator.GetBool("Walk") == false) && testZom > 1)
+        if ((animator.GetBool("Walk") == false) && !deadth)
         {
             transform.forward = player.transform.position - transform.position;
             animator.SetTrigger("Collision");
@@ -53,18 +59,14 @@ public class EnemyFollow : MonoBehaviour
     }
 
 
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Weapon"))
         {
             health--;
-            Debug.Log(health);
             if (health == 0)
             {
-                animator.SetTrigger("Death");
-                testZom = 0;
-                agent.speed = 0;
+                OnDeadth();
                 StartCoroutine(DelayDisActiveZombie());
             }
         }
@@ -81,7 +83,19 @@ public class EnemyFollow : MonoBehaviour
     //Delay zombie disappear
     IEnumerator DelayDisActiveZombie()
     {
-        yield return new WaitForSeconds(10f);
-        gameObject.SetActive(false); 
+        yield return new WaitForSeconds(15f);
+        gameObject.SetActive(false);
+    }
+
+    public void OnDeadth()
+    {
+        animator.SetTrigger("Death");
+        deadth = true;
+        agent.speed = 0;
+        capsuleCollider.isTrigger = true;
+    }
+    public void NavMove()
+    {
+        agent.SetDestination(player.position);
     }
 }

@@ -5,7 +5,28 @@ using UnityEngine.EventSystems;
 
 public class MovementPlayer : MonoBehaviour
 {
-    private static MovementPlayer instance = null;
+    private static MovementPlayer instance;
+
+    //Biến liên quan đến di chuyển.
+    private CharacterController characterController;
+    private float speed = 7;
+    public FloatingJoystick joyStick;
+
+    //Biến liên quan đến tấn công.
+    public GameObject uiPunch;
+    public GameObject baseBall;
+
+    public Transform cameraManager;
+    private Animator animator;
+
+    //Giới hạn trên dưới trái phải.
+    private float boundaryLeftRight = 6.5f;
+    private float boundaryUPDown = 0.2f;
+
+    //Biến liên quan đến xoay player theo hướng di chuyển.
+    private float turnSmoothTime = 0.1f;
+    private float turnSmoothVelocity;
+
     public static MovementPlayer Instance
     {
         get
@@ -18,28 +39,18 @@ public class MovementPlayer : MonoBehaviour
         }
     }
 
-    public GameObject uiPunch;
-    private CharacterController characterController;
-    public float speed = 10;
-    public FloatingJoystick joyStick;
-
-    private Animator animator;
-    public bool punch = false;
-
-    public GameObject baseBall;
-
-    public Transform cameraManager;
-    public float rotationSpeed = 3.5f;
-    private Quaternion targetRotation;
-    private Quaternion playerRotation;
-
-    //Constrain left right
-    private float boundaryLeftRight = 6.5f;
-    private float boundaryUPDown = 0.2f;
-
-    public float turnSmoothTime = 0.5f;
-    private float turnSmoothVelocity;
-
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         animator= GetComponentInChildren<Animator>();
