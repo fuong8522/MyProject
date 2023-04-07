@@ -357,8 +357,10 @@
 "Assets/Mygame/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs"
 "Assets/Mygame/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs"
 "Assets/Mygame/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs"
+"Assets/Mygame/Scripts/AudioPlayer.cs"
 "Assets/Mygame/Scripts/Camera/CamManager.cs"
 "Assets/Mygame/Scripts/Enemy/EnemyFollow.cs"
+"Assets/Mygame/Scripts/HealZombie.cs"
 "Assets/Mygame/Scripts/MobileControl/TouchFieldController.cs"
 "Assets/Mygame/Scripts/Player/MovementPlayer.cs"
 -langversion:9.0

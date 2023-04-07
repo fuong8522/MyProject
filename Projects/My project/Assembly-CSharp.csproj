@@ -56,10 +56,12 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Mygame\Scripts\HealZombie.cs" />
     <Compile Include="Assets\Mygame\Scripts\Player\MovementPlayer.cs" />
     <Compile Include="Assets\Mygame\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Mygame\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Mygame\Scripts\Enemy\EnemyFollow.cs" />
+    <Compile Include="Assets\Mygame\Scripts\AudioPlayer.cs" />
     <Compile Include="Assets\Mygame\Scripts\MobileControl\TouchFieldController.cs" />
     <Compile Include="Assets\Mygame\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Mygame\Joystick Pack\Scripts\Base\Joystick.cs" />

@@ -13,7 +13,7 @@ public class EnemyFollow : MonoBehaviour
     private CapsuleCollider capsuleCollider;
     private Animator animator;
     private bool deadth;
-    private float health = 6f;
+    private float health = 100f;
     private float lastPositionZ;
 
 
@@ -58,12 +58,14 @@ public class EnemyFollow : MonoBehaviour
         }
     }
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Weapon"))
+        if (other.gameObject.CompareTag("Weapon"))
         {
             health--;
+            animator.SetTrigger("IsHitted");
+            MovementPlayer.Instance.baseBall.SetActive(false);
+
             if (health == 0)
             {
                 OnDeadth();
@@ -72,13 +74,16 @@ public class EnemyFollow : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay(Collision collision)
+
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.CompareTag("Weapon"))
+        if (other.gameObject.CompareTag("Weapon"))
         {
+            Debug.Log("fuong");
             MovementPlayer.Instance.baseBall.SetActive(false);
         }
     }
+
 
     //Delay zombie disappear
     IEnumerator DelayDisActiveZombie()
