@@ -56,12 +56,11 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Mygame\Scripts\HealZombie.cs" />
     <Compile Include="Assets\Mygame\Scripts\Player\MovementPlayer.cs" />
     <Compile Include="Assets\Mygame\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Mygame\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Mygame\Scripts\Enemy\EnemyFollow.cs" />
-    <Compile Include="Assets\Mygame\Scripts\AudioPlayer.cs" />
+    <Compile Include="Assets\Mygame\Scripts\SoundManager\AudioPlayer.cs" />
     <Compile Include="Assets\Mygame\Scripts\MobileControl\TouchFieldController.cs" />
     <Compile Include="Assets\Mygame\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Mygame\Joystick Pack\Scripts\Base\Joystick.cs" />
@@ -79,7 +78,6 @@
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\Free Stylized Skybox\ReadMe.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />

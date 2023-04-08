@@ -7,19 +7,20 @@ using UnityEngine.UI;
 
 public class EnemyFollow : MonoBehaviour
 {
-
     private Transform player;
     private NavMeshAgent agent;
     private CapsuleCollider capsuleCollider;
     private Animator animator;
     private bool deadth;
-    private float health = 100f;
+    private float health = 6f;
     private float lastPositionZ;
 
+    public static bool attacked;
 
 
     void Start()
     {
+        attacked = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         capsuleCollider = GetComponent<CapsuleCollider>();
@@ -33,6 +34,11 @@ public class EnemyFollow : MonoBehaviour
         OnAnimationZombieWalk();
         NavMove();
         OnAnimationAttack();
+        if (MovementPlayer.instance.checkPunch == false)
+        {
+            attacked = false;
+        }
+        OnDeadth();
     }
 
     public void OnAnimationZombieWalk()
@@ -58,49 +64,45 @@ public class EnemyFollow : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Weapon"))
-        {
-            health--;
-            animator.SetTrigger("IsHitted");
-            MovementPlayer.Instance.baseBall.SetActive(false);
-
-            if (health == 0)
-            {
-                OnDeadth();
-                StartCoroutine(DelayDisActiveZombie());
-            }
-        }
-    }
-
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Weapon"))
+        if(other.gameObject.CompareTag("Weapon") && MovementPlayer.instance.checkPunch == true && attacked == false)
         {
-            Debug.Log("fuong");
-            MovementPlayer.Instance.baseBall.SetActive(false);
+            if(deadth== false)
+            {
+                animator.SetTrigger("IsHitted");
+            }
+            health--;
+            attacked = true;
         }
+
     }
+
 
 
     //Delay zombie disappear
     IEnumerator DelayDisActiveZombie()
     {
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(5f);
         gameObject.SetActive(false);
     }
 
     public void OnDeadth()
     {
-        animator.SetTrigger("Death");
-        deadth = true;
-        agent.speed = 0;
-        capsuleCollider.isTrigger = true;
+        if(health == 0)
+        {
+            animator.SetTrigger("Death");
+            deadth = true;
+            capsuleCollider.isTrigger = true;
+            DelayDisActiveZombie();
+        }
     }
     public void NavMove()
     {
-        agent.SetDestination(player.position);
+        if(deadth== false)
+        {
+            agent.SetDestination(player.position);
+        }
     }
 }

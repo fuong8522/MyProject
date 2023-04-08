@@ -5,12 +5,14 @@ using UnityEngine.EventSystems;
 
 public class MovementPlayer : MonoBehaviour
 {
-    private static MovementPlayer instance;
+    public static MovementPlayer instance = null;
 
     //Biến liên quan đến di chuyển.
     private CharacterController characterController;
     private float speed = 7;
     public FloatingJoystick joyStick;
+
+    public bool checkPunch = true;
 
     //Biến liên quan đến tấn công.
     public GameObject uiPunch;
@@ -53,15 +55,17 @@ public class MovementPlayer : MonoBehaviour
     }
     void Start()
     {
-        animator= GetComponentInChildren<Animator>();
+        animator = GetComponentInChildren<Animator>();
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
+        checkPunch = false;
     }
 
     void Update()
     {
         Movement();
         ConstrainMovement();
+        CheckAnimationPunch();
     }
 
     public void ConstrainMovement()
@@ -78,11 +82,11 @@ public class MovementPlayer : MonoBehaviour
         //Giới hạn trên dưới
         if (transform.position.y > -boundaryUPDown)
         {
-            transform.position = new Vector3(transform.position.x,-boundaryUPDown, transform.position.z);
+            transform.position = new Vector3(transform.position.x, -boundaryUPDown, transform.position.z);
         }
         if (transform.position.y < -boundaryUPDown)
         {
-            transform.position = new Vector3(transform.position.x,-boundaryUPDown, transform.position.z);
+            transform.position = new Vector3(transform.position.x, -boundaryUPDown, transform.position.z);
         }
     }
     public void Movement()
@@ -95,7 +99,7 @@ public class MovementPlayer : MonoBehaviour
             //Tính góc xoay
             float targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg + cameraManager.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f,angle, 0f);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
             //Xoay theo hướng di chuyển
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             characterController.Move(moveDirection.normalized * Time.deltaTime * speed);
@@ -128,10 +132,21 @@ public class MovementPlayer : MonoBehaviour
     }
     IEnumerator OnOffAnimationZombie()
     {
-        baseBall.SetActive(true);
         uiPunch.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         uiPunch.SetActive(false);
     }
 
+    void CheckAnimationPunch()
+    {
+        if (animator.GetCurrentAnimatorStateInfo(1).IsName("m_melee_combat_attack_A") && animator.GetCurrentAnimatorStateInfo(1).normalizedTime < 1)
+        {
+            checkPunch = true;
+        }
+        else
+        {
+            checkPunch = false;
+
+        }
+    }
 }
