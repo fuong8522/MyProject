@@ -16,7 +16,6 @@ public class MovementPlayer : MonoBehaviour
 
     //Biến liên quan đến tấn công.
     public GameObject uiPunch;
-    public GameObject baseBall;
 
     public Transform cameraManager;
     private Animator animator;

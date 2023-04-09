@@ -12,9 +12,8 @@ public class EnemyFollow : MonoBehaviour
     private CapsuleCollider capsuleCollider;
     private Animator animator;
     private bool deadth;
-    private float health = 6f;
+    private float health = 5f;
     private float lastPositionZ;
-
     public static bool attacked;
 
 
@@ -34,11 +33,7 @@ public class EnemyFollow : MonoBehaviour
         OnAnimationZombieWalk();
         NavMove();
         OnAnimationAttack();
-        if (MovementPlayer.instance.checkPunch == false)
-        {
-            attacked = false;
-        }
-        OnDeadth();
+        CheckPunch();
     }
 
     public void OnAnimationZombieWalk()
@@ -67,42 +62,46 @@ public class EnemyFollow : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.CompareTag("Weapon") && MovementPlayer.instance.checkPunch == true && attacked == false)
+        if (other.gameObject.CompareTag("Weapon") && MovementPlayer.instance.checkPunch && !attacked && !deadth)
         {
-            if(deadth== false)
-            {
-                animator.SetTrigger("IsHitted");
-            }
+            animator.SetTrigger("IsHitted");
             health--;
             attacked = true;
+            OnDeadth();
         }
-
     }
-
 
 
     //Delay zombie disappear
     IEnumerator DelayDisActiveZombie()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(15f);
         gameObject.SetActive(false);
     }
 
     public void OnDeadth()
     {
-        if(health == 0)
+        if (health == 0)
         {
-            animator.SetTrigger("Death");
             deadth = true;
+            animator.SetTrigger("Death");
             capsuleCollider.isTrigger = true;
-            DelayDisActiveZombie();
+            StartCoroutine(DelayDisActiveZombie());
         }
     }
     public void NavMove()
     {
-        if(deadth== false)
+        if (!deadth)
         {
             agent.SetDestination(player.position);
+        }
+    }
+
+    void CheckPunch()
+    {
+        if (MovementPlayer.instance.checkPunch == false)
+        {
+            attacked = false;
         }
     }
 }

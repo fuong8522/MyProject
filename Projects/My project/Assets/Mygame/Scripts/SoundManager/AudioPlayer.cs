@@ -5,13 +5,14 @@ using UnityEngine.Audio;
 
 public class AudioPlayer : MonoBehaviour
 {
-    private AudioSource playerEffect;
+    private AudioSource playerEffect1;
     public AudioSource playerEffect2;
     public AudioClip basesound;
+    public AudioClip head_hit;
     public List<AudioClip> clips = new List<AudioClip>();
     void Start()
     {
-        playerEffect= GetComponent<AudioSource>();
+        playerEffect1= GetComponent<AudioSource>();
     }
 
     //Âm thanh bước chân.
@@ -23,7 +24,14 @@ public class AudioPlayer : MonoBehaviour
     //Âm thanh vũ khí 1.
     void SoundBaseBall()
     {
-        playerEffect.PlayOneShot(basesound, 0.05f);
+        if(EnemyFollow.attacked)
+        {
+            playerEffect2.PlayOneShot(head_hit, 0.25f);
+        }
+        else
+        {
+            playerEffect1.PlayOneShot(basesound, 0.05f);
+        }
     }
 
 }

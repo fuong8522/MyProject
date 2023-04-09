@@ -174,7 +174,7 @@ ModelImporter:
       name: m_melee_combat_attack_A
       takeName: Take 001
       internalID: 0
-      firstFrame: 1
+      firstFrame: 3.1
       lastFrame: 25.9
       wrapMode: 0
       orientationOffsetY: 0
