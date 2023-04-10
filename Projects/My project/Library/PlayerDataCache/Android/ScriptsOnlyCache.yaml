@@ -2,11 +2,16 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AudioPlayer
-    - CamManager
     - EnemyFollow
     - FloatingJoystick
     - MovementPlayer
     - TouchFieldController
+    Cinemachine.dll:
+    - Cinemachine.CinemachineBrain
+    - Cinemachine.CinemachineComposer
+    - Cinemachine.CinemachineFramingTransposer
+    - Cinemachine.CinemachinePipeline
+    - Cinemachine.CinemachineVirtualCamera
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
@@ -50,6 +55,12 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
   serializedClasses:
+    Cinemachine:
+    - Cinemachine.CinemachineBlendDefinition
+    - Cinemachine.CinemachineBrain/BrainEvent
+    - Cinemachine.CinemachineBrain/VcamActivatedEvent
+    - Cinemachine.CinemachineVirtualCameraBase/TransitionParams
+    - Cinemachine.LensSettings
     Unity.InputSystem:
     - UnityEngine.InputSystem.InputAction
     - UnityEngine.InputSystem.InputActionMap
@@ -139,41 +150,49 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1546}
+      Script: {instanceID: 1548}
     - Class: 114
-      Script: {instanceID: 1774}
+      Script: {instanceID: 1776}
     - Class: 114
-      Script: {instanceID: 2284}
+      Script: {instanceID: 2286}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2706}
     - Class: 114
-      Script: {instanceID: 2982}
+      Script: {instanceID: 2776}
     - Class: 114
-      Script: {instanceID: 2990}
+      Script: {instanceID: 2844}
     - Class: 114
-      Script: {instanceID: 3310}
+      Script: {instanceID: 2984}
     - Class: 114
-      Script: {instanceID: 4036}
+      Script: {instanceID: 2992}
     - Class: 114
-      Script: {instanceID: 4490}
+      Script: {instanceID: 3312}
     - Class: 114
-      Script: {instanceID: 4496}
+      Script: {instanceID: 3788}
     - Class: 114
-      Script: {instanceID: 4786}
+      Script: {instanceID: 4038}
     - Class: 114
-      Script: {instanceID: 5240}
+      Script: {instanceID: 4492}
     - Class: 114
-      Script: {instanceID: 5602}
+      Script: {instanceID: 4498}
     - Class: 114
-      Script: {instanceID: 6222}
+      Script: {instanceID: 4788}
     - Class: 114
-      Script: {instanceID: 7184}
+      Script: {instanceID: 5200}
     - Class: 114
-      Script: {instanceID: 7602}
+      Script: {instanceID: 5242}
     - Class: 114
-      Script: {instanceID: 7948}
+      Script: {instanceID: 5604}
     - Class: 114
-      Script: {instanceID: 8284}
+      Script: {instanceID: 6192}
+    - Class: 114
+      Script: {instanceID: 6224}
+    - Class: 114
+      Script: {instanceID: 7186}
+    - Class: 114
+      Script: {instanceID: 7604}
+    - Class: 114
+      Script: {instanceID: 7950}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
