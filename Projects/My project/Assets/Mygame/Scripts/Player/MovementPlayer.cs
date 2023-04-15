@@ -28,6 +28,8 @@ public class MovementPlayer : MonoBehaviour
     private float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
 
+    //Phạm vi tấn công.
+    public float attackRange = 0.5f;
     public static MovementPlayer Instance
     {
         get
@@ -112,6 +114,7 @@ public class MovementPlayer : MonoBehaviour
 
     public void OnPunchButton()
     {
+        FindEnemy();
         animator.SetTrigger("Punch");
         StartCoroutine(OnOffAnimationZombie());
     }
@@ -146,6 +149,22 @@ public class MovementPlayer : MonoBehaviour
         {
             checkPunch = false;
 
+        }
+    }
+
+    void FindEnemy()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRange);
+        foreach(Collider collider in hitColliders)
+        {
+            if(collider.tag == "Enemy")
+            {
+                transform.forward = collider.transform.position - transform.position;
+            }
+            else
+            {
+                //transform.forward = Vector3.forward;
+            }
         }
     }
 }

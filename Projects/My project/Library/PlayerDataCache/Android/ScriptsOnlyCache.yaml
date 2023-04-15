@@ -1,11 +1,14 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AudioEnemy
     - AudioPlayer
     - EnemyFollow
     - FloatingJoystick
     - MovementPlayer
     - TouchFieldController
+    - destroyMe
+    - particleColorChangerMaster
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachineComposer
@@ -55,6 +58,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
   serializedClasses:
+    Assembly-CSharp:
+    - particleColorChangerMaster/colorChange
     Cinemachine:
     - Cinemachine.CinemachineBlendDefinition
     - Cinemachine.CinemachineBrain/BrainEvent
@@ -150,11 +155,11 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1548}
+      Script: {instanceID: 1546}
     - Class: 114
-      Script: {instanceID: 1776}
+      Script: {instanceID: 1774}
     - Class: 114
-      Script: {instanceID: 2286}
+      Script: {instanceID: 2284}
     - Class: 114
       Script: {instanceID: 2706}
     - Class: 114
@@ -166,33 +171,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2992}
     - Class: 114
-      Script: {instanceID: 3312}
+      Script: {instanceID: 3314}
     - Class: 114
-      Script: {instanceID: 3788}
+      Script: {instanceID: 3790}
     - Class: 114
-      Script: {instanceID: 4038}
-    - Class: 114
-      Script: {instanceID: 4492}
+      Script: {instanceID: 4042}
     - Class: 114
       Script: {instanceID: 4498}
     - Class: 114
-      Script: {instanceID: 4788}
+      Script: {instanceID: 4504}
     - Class: 114
-      Script: {instanceID: 5200}
+      Script: {instanceID: 4794}
     - Class: 114
-      Script: {instanceID: 5242}
+      Script: {instanceID: 5210}
     - Class: 114
-      Script: {instanceID: 5604}
+      Script: {instanceID: 5252}
     - Class: 114
-      Script: {instanceID: 6192}
+      Script: {instanceID: 5614}
     - Class: 114
-      Script: {instanceID: 6224}
+      Script: {instanceID: 6202}
     - Class: 114
-      Script: {instanceID: 7186}
+      Script: {instanceID: 6234}
     - Class: 114
-      Script: {instanceID: 7604}
+      Script: {instanceID: 7198}
     - Class: 114
-      Script: {instanceID: 7950}
+      Script: {instanceID: 7292}
+    - Class: 114
+      Script: {instanceID: 7358}
+    - Class: 114
+      Script: {instanceID: 7620}
+    - Class: 114
+      Script: {instanceID: 7966}
+    - Class: 114
+      Script: {instanceID: 8504}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -208,6 +219,10 @@ ScriptsOnlyBuild:
     - Class: 195
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -276,7 +291,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: e4e950d8563db361602f61ef29255fd9
+      Hash: 489853b0e1fe03526cf3b93c8a6f8f57
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MovementPlayer
@@ -396,6 +411,12 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreakMessageListener
   - hash:
       serializedVersion: 2
+      Hash: e9062a0a9a885890d9959ec0155b1daa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraShake
+  - hash:
+      serializedVersion: 2
       Hash: c1d728126ff1918728036c59106d32b2
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -474,7 +495,7 @@ ScriptsOnlyBuild:
     className: TestRunCallbackListener
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 06715f80b701d906b82701ab143fe17d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyFollow
@@ -514,6 +535,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnInputFieldEndEditMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: e2be45436b68a421e8ea0821e13bb2bc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraShakeProjectile
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -678,6 +705,12 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExit2DMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Projectile
+  - hash:
+      serializedVersion: 2
       Hash: 2574ac7d50617d23cdefe4ad22f5e1ad
     assemblyName: Unity.VisualScripting.Flow.dll
     namespaceName: Unity.VisualScripting
@@ -778,6 +811,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: 
     className: CinemachineTouchInputMapper
+  - hash:
+      serializedVersion: 2
+      Hash: 2f3c167fc07b4e189d6101a0a4709a8d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraShakeCaller
   - hash:
       serializedVersion: 2
       Hash: 0fb27be807aa299702f28ad0bcad1f46
@@ -894,6 +933,18 @@ ScriptsOnlyBuild:
     className: UnityOnPointerClickMessageListener
   - hash:
       serializedVersion: 2
+      Hash: ba6c029032c3790a32c37ce90b61cd1d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EffectActor
+  - hash:
+      serializedVersion: 2
+      Hash: cff32f5303d13497916d370a0295b656
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: projectileActor
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -930,7 +981,7 @@ ScriptsOnlyBuild:
     className: RemoteInputPlayerConnection
   - hash:
       serializedVersion: 2
-      Hash: c521783deb3ce6e483057bc1509cfff5
+      Hash: 18cd1ea1323bdfa681542211e111eca5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TouchFieldController
@@ -1152,6 +1203,12 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: e6c4518bc1078db26ead5f041a29caee
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ExplodingProjectile
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -1272,6 +1329,12 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: a6459077d5dad963c93e06c2f088f565
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioEnemy
+  - hash:
+      serializedVersion: 2
       Hash: d227987243593b32ae57394d06018643
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -1282,6 +1345,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnCollisionExitMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71e41e59a9b9d3d35a3f2005e6919d13
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: destroyMe
   - hash:
       serializedVersion: 2
       Hash: 8963690ef6f6b05ce03bfd8b5c26e20c
@@ -1474,6 +1543,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ScrollbarEventHandler
+  - hash:
+      serializedVersion: 2
+      Hash: ef45b67e1017e91e469a14f22a71d3cf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: test
+  - hash:
+      serializedVersion: 2
+      Hash: b9187b94ef13a2e294498ab2038ccdbf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: particleColorChangerMaster
   - hash:
       serializedVersion: 2
       Hash: 66a76d307baa3e8eb65d877c961f1b43

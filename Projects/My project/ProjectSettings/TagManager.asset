@@ -5,14 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - Weapon
+  - Enemy
+  - World
+  - Plan
+  - Plane
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
-  - 
+  - Plane
   - 
   - 
   - 

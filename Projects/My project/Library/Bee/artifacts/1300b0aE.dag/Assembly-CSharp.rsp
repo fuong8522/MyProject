@@ -352,6 +352,15 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/EffectBlood/packs/WebDemoAssets/scripts/CameraShake.cs"
+"Assets/EffectBlood/packs/WebDemoAssets/scripts/CameraShakeCaller.cs"
+"Assets/EffectBlood/packs/WebDemoAssets/scripts/CameraShakeProjectile.cs"
+"Assets/EffectBlood/packs/WebDemoAssets/scripts/EffectActor.cs"
+"Assets/EffectBlood/packs/WebDemoAssets/scripts/ExplodingProjectile.cs"
+"Assets/EffectBlood/packs/WebDemoAssets/scripts/Projectile.cs"
+"Assets/EffectBlood/packs/WebDemoAssets/scripts/projectileActor.cs"
+"Assets/EffectBlood/scripts/destroyMe.cs"
+"Assets/EffectBlood/scripts/particleColorChangerMaster.cs"
 "Assets/Mygame/Joystick Pack/Scripts/Base/Joystick.cs"
 "Assets/Mygame/Joystick Pack/Scripts/Joysticks/DynamicJoystick.cs"
 "Assets/Mygame/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs"
@@ -361,7 +370,9 @@
 "Assets/Mygame/Scripts/Enemy/EnemyFollow.cs"
 "Assets/Mygame/Scripts/MobileControl/TouchFieldController.cs"
 "Assets/Mygame/Scripts/Player/MovementPlayer.cs"
+"Assets/Mygame/Scripts/SoundManager/AudioEnemy.cs"
 "Assets/Mygame/Scripts/SoundManager/AudioPlayer.cs"
+"Assets/Mygame/Scripts/test.cs"
 -langversion:9.0
 
 /deterministic

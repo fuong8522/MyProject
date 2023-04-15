@@ -7,14 +7,17 @@ using UnityEngine.UI;
 
 public class EnemyFollow : MonoBehaviour
 {
+
+
     private Transform player;
     private NavMeshAgent agent;
     private CapsuleCollider capsuleCollider;
     private Animator animator;
-    private bool deadth;
-    private float health = 5f;
+    public bool deadth;
+    private float health = 3f;
     private float lastPositionZ;
     public static bool attacked;
+
 
 
     void Start()
@@ -87,6 +90,7 @@ public class EnemyFollow : MonoBehaviour
             animator.SetTrigger("Death");
             capsuleCollider.isTrigger = true;
             StartCoroutine(DelayDisActiveZombie());
+            this.gameObject.tag = "Untagged";
         }
     }
     public void NavMove()
