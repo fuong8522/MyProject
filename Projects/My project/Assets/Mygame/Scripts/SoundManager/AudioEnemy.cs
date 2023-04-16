@@ -31,7 +31,7 @@ public class AudioEnemy : MonoBehaviour
     void SoundAttack()
     {
         AudioClip attack = clips2[Random.Range(0, clips2.Count)];
-        playerEffect.PlayOneShot(attack, 0.12f);
+        playerEffect.PlayOneShot(attack, 0.08f);
 
     }
     void EffectBlood()
