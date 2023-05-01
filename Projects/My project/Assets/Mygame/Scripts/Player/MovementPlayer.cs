@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,6 +8,11 @@ public class MovementPlayer : MonoBehaviour
 {
     public static MovementPlayer instance = null;
 
+    public bool checkheal;
+
+    public bool death;
+
+    public int health = 1;
     //Biến liên quan đến di chuyển.
     private CharacterController characterController;
     private float speed = 7;
@@ -18,7 +24,7 @@ public class MovementPlayer : MonoBehaviour
     public GameObject uiPunch;
 
     public Transform cameraManager;
-    private Animator animator;
+    public Animator animator;
 
     //Giới hạn trên dưới trái phải.
     private float boundaryLeftRight = 6.5f;
@@ -56,6 +62,7 @@ public class MovementPlayer : MonoBehaviour
     }
     void Start()
     {
+        death = false;
         animator = GetComponentInChildren<Animator>();
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -67,6 +74,9 @@ public class MovementPlayer : MonoBehaviour
         Movement();
         ConstrainMovement();
         CheckAnimationPunch();
+
+
+        
     }
 
     public void ConstrainMovement()
@@ -155,9 +165,9 @@ public class MovementPlayer : MonoBehaviour
     void FindEnemy()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRange);
-        foreach(Collider collider in hitColliders)
+        foreach (Collider collider in hitColliders)
         {
-            if(collider.tag == "Enemy")
+            if (collider.tag == "Enemy")
             {
                 transform.forward = collider.transform.position - transform.position;
             }
@@ -165,6 +175,15 @@ public class MovementPlayer : MonoBehaviour
             {
                 //transform.forward = Vector3.forward;
             }
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+
+            Debug.Log("check health");
         }
     }
 }

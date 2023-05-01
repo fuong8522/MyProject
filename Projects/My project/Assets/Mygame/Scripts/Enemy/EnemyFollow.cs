@@ -18,10 +18,11 @@ public class EnemyFollow : MonoBehaviour
     private float lastPositionZ;
     public static bool attacked;
 
-
+    public bool checkAnimationStart;
 
     void Start()
     {
+        checkAnimationStart = false;
         attacked = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
@@ -37,6 +38,25 @@ public class EnemyFollow : MonoBehaviour
         NavMove();
         OnAnimationAttack();
         CheckPunch();
+
+
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 1))
+        {
+            if (hit.collider.gameObject.name == "Player" && checkAnimationStart)
+            {
+                MovementPlayer.instance.health--;
+            }
+        }
+
+        if (MovementPlayer.instance.health == 0 && !MovementPlayer.instance.death)
+        {
+            MovementPlayer.instance.animator.SetTrigger("Death");
+            MovementPlayer.instance.death = true;
+        }
+
     }
 
     public void OnAnimationZombieWalk()
@@ -58,6 +78,7 @@ public class EnemyFollow : MonoBehaviour
         if ((animator.GetBool("Walk") == false) && !deadth)
         {
             transform.forward = player.transform.position - transform.position;
+
             animator.SetTrigger("Collision");
         }
     }

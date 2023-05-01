@@ -11,8 +11,10 @@ public class AudioEnemy : MonoBehaviour
     public List<AudioClip> clips2 = new List<AudioClip>();
     private AudioClip attack;
     public ParticleSystem effectblood;
+    private EnemyFollow zombie;
     void Start()
     {
+        zombie = GetComponent<EnemyFollow>();
         playerEffect = GetComponent<AudioSource>();
         count = 0;
     }
@@ -42,4 +44,15 @@ public class AudioEnemy : MonoBehaviour
     {
         effectblood.Play();  // Khởi động lại hiệu ứng
     }
+    void CheckStartAnimation()
+    {
+        zombie.checkAnimationStart = true;
+    }
+    
+    void CheckEndAnimation()
+    {
+        zombie.checkAnimationStart = false;
+    }
+
+
 }
