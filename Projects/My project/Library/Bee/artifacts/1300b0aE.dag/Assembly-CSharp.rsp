@@ -370,9 +370,11 @@
 "Assets/Mygame/Scripts/Enemy/EnemyFollow.cs"
 "Assets/Mygame/Scripts/MobileControl/TouchFieldController.cs"
 "Assets/Mygame/Scripts/Player/MovementPlayer.cs"
+"Assets/Mygame/Scripts/Player/SpawnBall.cs"
 "Assets/Mygame/Scripts/SoundManager/AudioEnemy.cs"
 "Assets/Mygame/Scripts/SoundManager/AudioPlayer.cs"
 "Assets/Mygame/Scripts/test.cs"
+"Assets/Mygame/Scripts/Weapon/MoveWeapon.cs"
 -langversion:9.0
 
 /deterministic

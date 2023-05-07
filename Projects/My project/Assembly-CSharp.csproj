@@ -63,6 +63,7 @@
     <Compile Include="Assets\Mygame\Scripts\Enemy\EnemyFollow.cs" />
     <Compile Include="Assets\EffectBlood\packs\WebDemoAssets\scripts\CameraShakeProjectile.cs" />
     <Compile Include="Assets\EffectBlood\packs\WebDemoAssets\scripts\Projectile.cs" />
+    <Compile Include="Assets\Mygame\Scripts\Weapon\MoveWeapon.cs" />
     <Compile Include="Assets\EffectBlood\packs\WebDemoAssets\scripts\CameraShakeCaller.cs" />
     <Compile Include="Assets\Mygame\Scripts\SoundManager\AudioPlayer.cs" />
     <Compile Include="Assets\EffectBlood\packs\WebDemoAssets\scripts\EffectActor.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\Mygame\Scripts\SoundManager\AudioEnemy.cs" />
     <Compile Include="Assets\EffectBlood\scripts\destroyMe.cs" />
     <Compile Include="Assets\Mygame\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
+    <Compile Include="Assets\Mygame\Scripts\Player\SpawnBall.cs" />
     <Compile Include="Assets\Mygame\Scripts\Camera\CamManager.cs" />
     <Compile Include="Assets\Mygame\Scripts\test.cs" />
     <Compile Include="Assets\EffectBlood\scripts\particleColorChangerMaster.cs" />

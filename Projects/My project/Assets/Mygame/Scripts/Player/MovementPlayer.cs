@@ -35,7 +35,7 @@ public class MovementPlayer : MonoBehaviour
     private float turnSmoothVelocity;
 
     //Phạm vi tấn công.
-    public float attackRange = 0.5f;
+    public float attackRange = 50.0f;
     public static MovementPlayer Instance
     {
         get
@@ -164,7 +164,7 @@ public class MovementPlayer : MonoBehaviour
 
     void FindEnemy()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRange);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 560.0f);
         foreach (Collider collider in hitColliders)
         {
             if (collider.tag == "Enemy")

@@ -75,7 +75,7 @@ public class EnemyFollow : MonoBehaviour
     public void OnAnimationAttack()
     {
         //Zombie attack player
-        if ((animator.GetBool("Walk") == false) && !deadth)
+        if ((animator.GetBool("Walk") == false ) && !deadth)
         {
             transform.forward = player.transform.position - transform.position;
 
@@ -86,7 +86,7 @@ public class EnemyFollow : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Weapon") && MovementPlayer.instance.checkPunch && !attacked && !deadth)
+        if ( (other.gameObject.CompareTag("BallWeapon" ) && !deadth ) || (other.gameObject.CompareTag("Weapon") && MovementPlayer.instance.checkPunch && !attacked && !deadth))
         {
             animator.SetTrigger("IsHitted");
             health--;
@@ -108,6 +108,7 @@ public class EnemyFollow : MonoBehaviour
         if (health == 0)
         {
             deadth = true;
+            agent.SetDestination(transform.position);
             animator.SetTrigger("Death");
             capsuleCollider.isTrigger = true;
             StartCoroutine(DelayDisActiveZombie());
