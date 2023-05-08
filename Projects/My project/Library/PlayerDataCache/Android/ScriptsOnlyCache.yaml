@@ -5,8 +5,11 @@ ScriptsOnlyBuild:
     - AudioPlayer
     - EnemyFollow
     - FloatingJoystick
+    - MoveWeapon
     - MovementPlayer
+    - SpawnBall
     - TouchFieldController
+    - WeaponSwitching
     - destroyMe
     - particleColorChangerMaster
     Cinemachine.dll:
@@ -42,8 +45,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -55,6 +60,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Text
   serializedClasses:
     Assembly-CSharp:
     - particleColorChangerMaster/colorChange
@@ -97,6 +103,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.AnimationTriggers
     - UnityEngine.UI.Button/ButtonClickedEvent
     - UnityEngine.UI.ColorBlock
+    - UnityEngine.UI.FontData
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.SpriteState
@@ -104,6 +111,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: MovementPlayer
     methodName: OnPunchButton
+  - assembly: Assembly-CSharp
+    fullTypeName: WeaponSwitching
+    methodName: OnOffSwitchButton
   sceneClasses:
     Assets/Mygame/Scenes/MainScene.unity:
     - Class: 1
@@ -153,58 +163,68 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1546}
+      Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 1774}
+      Script: {instanceID: 1778}
     - Class: 114
-      Script: {instanceID: 2284}
+      Script: {instanceID: 2288}
     - Class: 114
-      Script: {instanceID: 2706}
+      Script: {instanceID: 2710}
     - Class: 114
-      Script: {instanceID: 2776}
+      Script: {instanceID: 2780}
     - Class: 114
-      Script: {instanceID: 2844}
+      Script: {instanceID: 2848}
     - Class: 114
-      Script: {instanceID: 2984}
+      Script: {instanceID: 2988}
     - Class: 114
-      Script: {instanceID: 2992}
+      Script: {instanceID: 2996}
     - Class: 114
-      Script: {instanceID: 3314}
+      Script: {instanceID: 3318}
     - Class: 114
-      Script: {instanceID: 3790}
+      Script: {instanceID: 3794}
     - Class: 114
-      Script: {instanceID: 4042}
+      Script: {instanceID: 4046}
     - Class: 114
-      Script: {instanceID: 4498}
+      Script: {instanceID: 4210}
     - Class: 114
       Script: {instanceID: 4504}
     - Class: 114
-      Script: {instanceID: 4794}
+      Script: {instanceID: 4510}
     - Class: 114
-      Script: {instanceID: 5210}
+      Script: {instanceID: 4800}
     - Class: 114
-      Script: {instanceID: 5252}
+      Script: {instanceID: 5216}
     - Class: 114
-      Script: {instanceID: 5614}
+      Script: {instanceID: 5258}
     - Class: 114
-      Script: {instanceID: 6202}
+      Script: {instanceID: 5620}
     - Class: 114
-      Script: {instanceID: 6234}
+      Script: {instanceID: 5894}
     - Class: 114
-      Script: {instanceID: 7198}
+      Script: {instanceID: 6208}
     - Class: 114
-      Script: {instanceID: 7292}
+      Script: {instanceID: 6240}
     - Class: 114
-      Script: {instanceID: 7358}
+      Script: {instanceID: 7204}
     - Class: 114
-      Script: {instanceID: 7620}
+      Script: {instanceID: 7298}
     - Class: 114
-      Script: {instanceID: 7966}
+      Script: {instanceID: 7364}
     - Class: 114
-      Script: {instanceID: 8504}
+      Script: {instanceID: 7626}
+    - Class: 114
+      Script: {instanceID: 7972}
+    - Class: 114
+      Script: {instanceID: 7974}
+    - Class: 114
+      Script: {instanceID: 8512}
+    - Class: 114
+      Script: {instanceID: 31080}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -289,7 +309,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 489853b0e1fe03526cf3b93c8a6f8f57
+      Hash: 3d6337f969608d365b7ea87baf049091
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MovementPlayer
@@ -493,7 +513,7 @@ ScriptsOnlyBuild:
     className: TestRunCallbackListener
   - hash:
       serializedVersion: 2
-      Hash: 06715f80b701d906b82701ab143fe17d
+      Hash: e4f671192097ba7a11cb7c1b010938ad
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyFollow
@@ -743,6 +763,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.Editor
     className: InputActionDebuggerWindow
+  - hash:
+      serializedVersion: 2
+      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MoveWeapon
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -1465,6 +1491,12 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: fc8d039f934abffafd0502e07d7fd56d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpawnBall
+  - hash:
+      serializedVersion: 2
       Hash: 89b2906879e76b50266949198ecada41
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.UI
@@ -1607,6 +1639,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 430aef385b02e29cd7f3b18411350375
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WeaponSwitching
   platform: 13
   scenePathNames:
   - Assets/Mygame/Scenes/MainScene.unity

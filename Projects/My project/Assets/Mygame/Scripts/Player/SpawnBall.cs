@@ -6,10 +6,14 @@ public class SpawnBall : MonoBehaviour
 {
     public Transform posBall;
     public GameObject spawnBall;
+    public GameObject ballObject;
 
     void SpawBall()
     {
-            Instantiate(spawnBall, posBall.position,Quaternion.identity);
+        if (ballObject.gameObject.active)
+        {
+            Instantiate(spawnBall, posBall.position, Quaternion.identity);
+        }
 
     }
 
