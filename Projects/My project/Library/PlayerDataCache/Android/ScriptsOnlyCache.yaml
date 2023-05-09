@@ -60,7 +60,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
-    - UnityEngine.UI.Text
   serializedClasses:
     Assembly-CSharp:
     - particleColorChangerMaster/colorChange
@@ -103,7 +102,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.AnimationTriggers
     - UnityEngine.UI.Button/ButtonClickedEvent
     - UnityEngine.UI.ColorBlock
-    - UnityEngine.UI.FontData
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.SpriteState
@@ -115,7 +113,7 @@ ScriptsOnlyBuild:
     fullTypeName: WeaponSwitching
     methodName: OnOffSwitchButton
   sceneClasses:
-    Assets/Mygame/Scenes/MainScene.unity:
+    Assets/1.MY GAME/Scenes/MainScene.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -199,8 +197,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5620}
     - Class: 114
-      Script: {instanceID: 5894}
-    - Class: 114
       Script: {instanceID: 6208}
     - Class: 114
       Script: {instanceID: 6240}
@@ -217,9 +213,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7974}
     - Class: 114
-      Script: {instanceID: 8512}
+      Script: {instanceID: 8510}
     - Class: 114
-      Script: {instanceID: 31080}
+      Script: {instanceID: 8800}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1575,12 +1571,6 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: ef45b67e1017e91e469a14f22a71d3cf
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: test
-  - hash:
-      serializedVersion: 2
       Hash: b9187b94ef13a2e294498ab2038ccdbf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1629,6 +1619,12 @@ ScriptsOnlyBuild:
     className: CinemachineFollowZoom
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WeaponSwitching
+  - hash:
+      serializedVersion: 2
       Hash: ec4c1d7d9fe98434976788ebc4ee261e
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -1639,13 +1635,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 430aef385b02e29cd7f3b18411350375
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: WeaponSwitching
   platform: 13
   scenePathNames:
-  - Assets/Mygame/Scenes/MainScene.unity
+  - Assets/1.MY GAME/Scenes/MainScene.unity
   playerPath: C:/Users/fuong/OneDrive/Desktop/test.apk
