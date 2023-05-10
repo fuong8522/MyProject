@@ -24,14 +24,9 @@ public class AudioPlayer : MonoBehaviour
     //Âm thanh vũ khí 1.
     void SoundBaseBall()
     {
-        if(EnemyFollow.attacked)
-        {
-            playerEffect2.PlayOneShot(head_hit, 0.25f);
-        }
-        else
-        {
+
             playerEffect1.PlayOneShot(basesound, 0.05f);
-        }
+
     }
 
 }

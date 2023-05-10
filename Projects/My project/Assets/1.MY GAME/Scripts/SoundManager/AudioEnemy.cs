@@ -12,6 +12,7 @@ public class AudioEnemy : MonoBehaviour
     private AudioClip attack;
     public ParticleSystem effectblood;
     private EnemyFollow zombie;
+    public AudioClip beaten;
     void Start()
     {
         zombie = GetComponent<EnemyFollow>();
@@ -52,6 +53,11 @@ public class AudioEnemy : MonoBehaviour
     void CheckEndAnimation()
     {
         zombie.checkAnimationStart = false;
+    }
+
+    void SoundBeaten()
+    {
+        playerEffect.PlayOneShot(beaten, 0.08f);
     }
 
 
