@@ -27,8 +27,9 @@ public class MovementPlayer : MonoBehaviour
     public Animator animator;
 
     //Giới hạn trên dưới trái phải.
-    private float boundaryLeftRight = 6.5f;
+    private float boundaryLeftRight = 5f;
     private float boundaryUPDown = 0.2f;
+    private float boundaryFrontBack = 22f;
 
     //Biến liên quan đến xoay player theo hướng di chuyển.
     private float turnSmoothTime = 0.1f;
@@ -98,6 +99,15 @@ public class MovementPlayer : MonoBehaviour
         if (transform.position.y < -boundaryUPDown)
         {
             transform.position = new Vector3(transform.position.x, -boundaryUPDown, transform.position.z);
+        }
+        //Giới hạn trước sau
+        if (transform.position.z > 70)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, 70);
+        }
+        if (transform.position.z < -boundaryFrontBack)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -boundaryFrontBack);
         }
     }
     public void Movement()
