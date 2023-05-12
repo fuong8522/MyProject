@@ -1349,7 +1349,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: a6459077d5dad963c93e06c2f088f565
+      Hash: c16b76ebe63f8b92474947b3cd0fe072
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AudioEnemy
