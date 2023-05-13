@@ -477,7 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkheal: 0
   death: 0
-  health: 5
+  health: 10
   joyStick: {fileID: 0}
   checkPunch: 1
   uiPunch: {fileID: 0}

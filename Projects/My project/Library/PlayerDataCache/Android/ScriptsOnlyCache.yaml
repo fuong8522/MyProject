@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - MoveWeapon
     - MovementPlayer
     - SpawnBall
+    - SpawnManager
     - TouchFieldController
     - WeaponSwitching
     - destroyMe
@@ -216,6 +217,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 8510}
     - Class: 114
       Script: {instanceID: 8800}
+    - Class: 114
+      Script: {instanceID: 29466}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1635,6 +1638,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: ec1d5ecc1ecb2b00cb14fc4867672c5b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpawnManager
   platform: 13
   scenePathNames:
   - Assets/1.MY GAME/Scenes/MainScene.unity

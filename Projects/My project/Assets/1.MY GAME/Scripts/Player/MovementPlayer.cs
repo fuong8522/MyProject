@@ -76,8 +76,6 @@ public class MovementPlayer : MonoBehaviour
         ConstrainMovement();
         CheckAnimationPunch();
 
-
-        
     }
 
     public void ConstrainMovement()

@@ -8,6 +8,7 @@ public class SpawnBall : MonoBehaviour
     public GameObject spawnBall;
     public GameObject ballObject;
 
+    [System.Obsolete]
     void SpawBall()
     {
         if (ballObject.gameObject.active)

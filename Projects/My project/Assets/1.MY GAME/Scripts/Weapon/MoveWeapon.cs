@@ -11,6 +11,13 @@ public class MoveWeapon : MonoBehaviour
         rb= GetComponent<Rigidbody>();
         rb.AddForce(MovementPlayer.instance.transform.forward * speed * Time.deltaTime,ForceMode.Impulse);
     }
-    
+    private void Update()
+    {
+        if(transform.position.y < 0.3f)
+        {
+            transform.Find("check").tag = "Untagged";
+        }
+    }
+
 
 }

@@ -79,6 +79,7 @@
     <Compile Include="Assets\1.MY GAME\Scripts\Camera\CamManager.cs" />
     <Compile Include="Assets\EffectBlood\scripts\particleColorChangerMaster.cs" />
     <Compile Include="Assets\1.MY GAME\Scripts\Player\WeaponSwitching.cs" />
+    <Compile Include="Assets\1.MY GAME\Scripts\SpawnManager\SpawnManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
