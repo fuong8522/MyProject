@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - AudioPlayer
     - EnemyFollow
     - FloatingJoystick
+    - HealBar
     - MoveWeapon
     - MovementPlayer
     - SpawnBall
@@ -43,6 +44,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -61,6 +63,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Slider
   serializedClasses:
     Assembly-CSharp:
     - particleColorChangerMaster/colorChange
@@ -90,6 +93,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteCharacter
     - TMPro.TMP_SpriteGlyph
     - TMPro.TMP_Style
+    - TMPro.VertexGradient
     UnityEngine.CoreModule:
     - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
@@ -105,6 +109,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
+    - UnityEngine.UI.Slider/SliderEvent
     - UnityEngine.UI.SpriteState
   methodsToPreserve:
   - assembly: Assembly-CSharp
@@ -166,59 +171,65 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1778}
     - Class: 114
-      Script: {instanceID: 2288}
+      Script: {instanceID: 1788}
     - Class: 114
-      Script: {instanceID: 2710}
+      Script: {instanceID: 2290}
     - Class: 114
-      Script: {instanceID: 2780}
+      Script: {instanceID: 2712}
     - Class: 114
-      Script: {instanceID: 2848}
+      Script: {instanceID: 2782}
     - Class: 114
-      Script: {instanceID: 2988}
+      Script: {instanceID: 2850}
     - Class: 114
-      Script: {instanceID: 2996}
+      Script: {instanceID: 2990}
     - Class: 114
-      Script: {instanceID: 3318}
+      Script: {instanceID: 2998}
     - Class: 114
-      Script: {instanceID: 3794}
+      Script: {instanceID: 3320}
     - Class: 114
-      Script: {instanceID: 4046}
+      Script: {instanceID: 3796}
     - Class: 114
-      Script: {instanceID: 4210}
+      Script: {instanceID: 4048}
     - Class: 114
-      Script: {instanceID: 4504}
+      Script: {instanceID: 4212}
     - Class: 114
-      Script: {instanceID: 4510}
+      Script: {instanceID: 4506}
     - Class: 114
-      Script: {instanceID: 4800}
+      Script: {instanceID: 4512}
     - Class: 114
-      Script: {instanceID: 5216}
+      Script: {instanceID: 4802}
     - Class: 114
-      Script: {instanceID: 5258}
+      Script: {instanceID: 5218}
     - Class: 114
-      Script: {instanceID: 5620}
+      Script: {instanceID: 5260}
     - Class: 114
-      Script: {instanceID: 6208}
+      Script: {instanceID: 5540}
     - Class: 114
-      Script: {instanceID: 6240}
+      Script: {instanceID: 5622}
     - Class: 114
-      Script: {instanceID: 7204}
+      Script: {instanceID: 6210}
     - Class: 114
-      Script: {instanceID: 7298}
+      Script: {instanceID: 6242}
     - Class: 114
-      Script: {instanceID: 7364}
+      Script: {instanceID: 6430}
     - Class: 114
-      Script: {instanceID: 7626}
+      Script: {instanceID: 7206}
     - Class: 114
-      Script: {instanceID: 7972}
+      Script: {instanceID: 7300}
+    - Class: 114
+      Script: {instanceID: 7366}
+    - Class: 114
+      Script: {instanceID: 7628}
     - Class: 114
       Script: {instanceID: 7974}
     - Class: 114
-      Script: {instanceID: 8510}
+      Script: {instanceID: 7976}
     - Class: 114
-      Script: {instanceID: 8800}
+      Script: {instanceID: 8512}
     - Class: 114
-      Script: {instanceID: 29466}
+      Script: {instanceID: 8802}
+    - Class: 114
+      Script: {instanceID: 35526}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -308,10 +319,16 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 3d6337f969608d365b7ea87baf049091
+      Hash: 56efd393cdbdfd4a2041c186169f4f3c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MovementPlayer
+  - hash:
+      serializedVersion: 2
+      Hash: ec1d5ecc1ecb2b00cb14fc4867672c5b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpawnManager
   - hash:
       serializedVersion: 2
       Hash: f24c4c994f99c3f136c292096f97d3a2
@@ -1640,10 +1657,10 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: ec1d5ecc1ecb2b00cb14fc4867672c5b
+      Hash: 4b8dff74c0603f3e6246514a412ffcba
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: SpawnManager
+    className: HealBar
   platform: 13
   scenePathNames:
   - Assets/1.MY GAME/Scenes/MainScene.unity

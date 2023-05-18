@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 
 public class MovementPlayer : MonoBehaviour
 {
     public static MovementPlayer instance = null;
-
+    public UnityEngine.UI.Image warning_health;
     public bool checkheal;
-
+    private float blood_previous;
     public bool death;
+    private float colorAlpha = 0;
+
+    public HealBar healbar;
 
     public int health = 1;
     //Biến liên quan đến di chuyển.
@@ -36,7 +41,7 @@ public class MovementPlayer : MonoBehaviour
     private float turnSmoothVelocity;
 
     //Phạm vi tấn công.
-    public float attackRange = 1.0f;
+    public float attackRange = 0.1f;
     public static MovementPlayer Instance
     {
         get
@@ -63,11 +68,14 @@ public class MovementPlayer : MonoBehaviour
     }
     void Start()
     {
+        blood_previous = health;
         death = false;
         animator = GetComponentInChildren<Animator>();
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         checkPunch = false;
+
+        healbar.SetMaxHeal(health);
     }
 
     void Update()
@@ -75,9 +83,23 @@ public class MovementPlayer : MonoBehaviour
         Movement();
         ConstrainMovement();
         CheckAnimationPunch();
+        SetHealBar();
+        WarningHealth();
+
 
     }
 
+    public void WarningHealth()
+    {
+        if (health < blood_previous)
+        {
+            colorAlpha = 0.6f;
+            warning_health.color = new Color(warning_health.color.r, warning_health.color.g, warning_health.color.b, colorAlpha);
+            blood_previous = health;
+        }
+        colorAlpha -= Time.deltaTime * 0.3f;
+        warning_health.color = new Color(warning_health.color.r, warning_health.color.g, warning_health.color.b, colorAlpha);
+    }
     public void ConstrainMovement()
     {
         //Giới hạn trái phải
@@ -172,20 +194,22 @@ public class MovementPlayer : MonoBehaviour
 
     void FindEnemy()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 560.0f);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position,attackRange);
         foreach (Collider collider in hitColliders)
         {
             if (collider.tag == "Enemy")
             {
                 transform.forward = collider.transform.position - transform.position;
             }
-            else
-            {
-                //transform.forward = Vector3.forward;
-            }
+
         }
     }
 
+
+    public void SetHealBar()
+    {
+        healbar.SetHeal(health);
+    }
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))

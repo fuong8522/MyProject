@@ -360,6 +360,7 @@
 "Assets/1.MY GAME/Scripts/Camera/CamManager.cs"
 "Assets/1.MY GAME/Scripts/Enemy/EnemyFollow.cs"
 "Assets/1.MY GAME/Scripts/MobileControl/TouchFieldController.cs"
+"Assets/1.MY GAME/Scripts/Player/HealBar.cs"
 "Assets/1.MY GAME/Scripts/Player/MovementPlayer.cs"
 "Assets/1.MY GAME/Scripts/Player/SpawnBall.cs"
 "Assets/1.MY GAME/Scripts/Player/WeaponSwitching.cs"
