@@ -366,6 +366,7 @@
 "Assets/1.MY GAME/Scripts/Player/WeaponSwitching.cs"
 "Assets/1.MY GAME/Scripts/SoundManager/AudioEnemy.cs"
 "Assets/1.MY GAME/Scripts/SoundManager/AudioPlayer.cs"
+"Assets/1.MY GAME/Scripts/SpawnManager/CapacityUnrise.cs"
 "Assets/1.MY GAME/Scripts/SpawnManager/SpawnManager.cs"
 "Assets/1.MY GAME/Scripts/Weapon/MoveWeapon.cs"
 "Assets/EffectBlood/packs/WebDemoAssets/scripts/CameraShake.cs"

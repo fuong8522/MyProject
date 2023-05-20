@@ -8,13 +8,12 @@ using UnityEngine.UI;
 public class EnemyFollow : MonoBehaviour
 {
 
-
     private Transform player;
     private NavMeshAgent agent;
     private CapsuleCollider capsuleCollider;
     private Animator animator;
     public bool deadth;
-    private float health = 10f;
+    private float health = 1f;
     private float lastPositionZ;
     public static bool attacked;
 
