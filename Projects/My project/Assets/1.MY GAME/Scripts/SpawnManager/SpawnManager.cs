@@ -2,16 +2,44 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
+    public static SpawnManager instance = null;
+
+    public static SpawnManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<SpawnManager>();
+            }
+            return instance;
+        }
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public GameObject[] zombiePrefabs;
-    public int timeDelay = 0;
+    private int timeDelay = 10;
     public float timeDelayCountDown = 0;
-    bool check = true;
-    private int countWave;
-    private Coroutine spawnzombie;
+    public bool check = true;
+    public int countWave;
+    public Coroutine spawnzombie = null;
     public Button buttonNextWave;
 
 
@@ -24,23 +52,31 @@ public class SpawnManager : MonoBehaviour
 
     void Update()
     {
-
         SpawnWave();
         timeSpawn.text = "Time: " + (int)timeDelayCountDown;
         timeDelayCountDown -= Time.deltaTime;
-    } 
+    }
 
     public void SpawnWave()
     {
         GameObject[] coins = GameObject.FindGameObjectsWithTag("Enemy");
         int zombieCount = coins.Length;
 
-        if (zombieCount == 0 && check && countWave <= 10)
+        if (zombieCount == 0 && check)
         {
-            buttonNextWave.gameObject.SetActive(true);
-            spawnzombie = StartCoroutine(DelaySpawnZombie());
-
+            if (countWave < 3)
+            {
+                buttonNextWave.gameObject.SetActive(true);
+                spawnzombie = StartCoroutine(DelaySpawnZombie());
+            }
+            else
+            {
+                Debug.Log("check next scene");
+                check = false;
+                //SceneManager.LoadScene("Day02");
+            }
         }
+
     }
 
     public void NextWave()
@@ -67,6 +103,10 @@ public class SpawnManager : MonoBehaviour
         countWave++;
         Vector3 spawnPos = new Vector3(Random.Range(-4, 4), 0, MovementPlayer.instance.transform.position.z + 23);
         int zombieIndex = Random.Range(0, zombiePrefabs.Length);
-        Instantiate(zombiePrefabs[zombieIndex], spawnPos, zombiePrefabs[zombieIndex].transform.rotation);
+        int numberofwave = SceneManager.GetActiveScene().buildIndex;
+
+            Instantiate(zombiePrefabs[zombieIndex], spawnPos, zombiePrefabs[zombieIndex].transform.rotation);
+        
+
     }
 }

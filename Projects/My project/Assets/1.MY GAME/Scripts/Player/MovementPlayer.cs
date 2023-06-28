@@ -14,7 +14,9 @@ public class MovementPlayer : MonoBehaviour
     private float blood_previous;
     public bool death;
     private float colorAlpha = 0;
-
+    public Button attackButton;
+    public Button changeWeapon = null;
+    public Button buttonNextWave = null;
     public HealBar healbar;
 
     public int health = 1;
@@ -71,6 +73,11 @@ public class MovementPlayer : MonoBehaviour
         blood_previous = health;
         death = false;
         animator = GetComponentInChildren<Animator>();
+        uiPunch = GameObject.Find("DelayImagePunch");
+        uiPunch.SetActive(false);
+        attackButton = GameObject.Find("ButtonPunch2").GetComponent<Button>();
+        attackButton.onClick.AddListener(OnPunchButton);
+       
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         checkPunch = false;
@@ -85,8 +92,6 @@ public class MovementPlayer : MonoBehaviour
         CheckAnimationPunch();
         SetHealBar();
         WarningHealth();
-
-
     }
 
     public void WarningHealth()

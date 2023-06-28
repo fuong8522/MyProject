@@ -10,6 +10,7 @@ TagManager:
   - Plan
   - Plane
   - BallWeapon
+  - DelayImagePunchTag
   layers:
   - Default
   - TransparentFX

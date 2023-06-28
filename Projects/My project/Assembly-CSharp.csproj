@@ -63,7 +63,9 @@
     <Compile Include="Assets\EffectBlood\packs\WebDemoAssets\scripts\CameraShake.cs" />
     <Compile Include="Assets\1.MY GAME\Scripts\Player\HealBar.cs" />
     <Compile Include="Assets\1.MY GAME\Scripts\Enemy\EnemyFollow.cs" />
+    <Compile Include="Assets\1.MY GAME\Scripts\Loaddata.cs" />
     <Compile Include="Assets\EffectBlood\packs\WebDemoAssets\scripts\CameraShakeProjectile.cs" />
+    <Compile Include="Assets\1.MY GAME\Scripts\Dondestroy.cs" />
     <Compile Include="Assets\EffectBlood\packs\WebDemoAssets\scripts\Projectile.cs" />
     <Compile Include="Assets\1.MY GAME\Scripts\Weapon\MoveWeapon.cs" />
     <Compile Include="Assets\EffectBlood\packs\WebDemoAssets\scripts\CameraShakeCaller.cs" />

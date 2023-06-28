@@ -5,6 +5,22 @@ using UnityEngine.UI;
 
 public class WeaponSwitching : MonoBehaviour
 {
+    public static WeaponSwitching instance = null;
+
+    public static WeaponSwitching Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<WeaponSwitching>();
+            }
+            return instance;
+        }
+    }
+
+
+
     private int selectWeapon;
     private int previousSelect;
     private bool onButtonSwitch;
