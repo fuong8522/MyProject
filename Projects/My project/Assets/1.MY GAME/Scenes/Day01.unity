@@ -277,11 +277,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cae42aefb6ed574aa916b90b0bad4b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneTemplate: {fileID: 0}
   zombiePrefabs:
   - {fileID: 4501252298797781771, guid: 829c42a6ae490a94d83ad199292d0221, type: 3}
   - {fileID: 5880604382580873307, guid: 36365d977a2ed47498f97b1f1aa55c92, type: 3}
   - {fileID: 8895923574467329619, guid: 7f83f7e9a73f98444a4422febb492efa, type: 3}
   timeDelayCountDown: 0
+  check: 1
   countWave: 0
   buttonNextWave: {fileID: 536623101}
   timeSpawn: {fileID: 526345025}
@@ -3080,8 +3082,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4284637925
+  m_fontColor: {r: 0.8962264, g: 0.38470095, b: 0.38470095, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3104,7 +3106,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3240,7 +3242,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 202.6}
+  m_AnchoredPosition: {x: 43, y: 251}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &536623101

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -71,9 +72,9 @@ public class SpawnManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("check next scene");
                 check = false;
-                //SceneManager.LoadScene("Day02");
+                int nextSceneIndex = SceneManager.GetActiveScene().buildIndex;
+                SceneManager.LoadScene(nextSceneIndex + 1, LoadSceneMode.Single);
             }
         }
 
@@ -104,9 +105,9 @@ public class SpawnManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(Random.Range(-4, 4), 0, MovementPlayer.instance.transform.position.z + 23);
         int zombieIndex = Random.Range(0, zombiePrefabs.Length);
         int numberofwave = SceneManager.GetActiveScene().buildIndex;
-
+        for (int i = 0; i <= numberofwave; i++)
+        {
             Instantiate(zombiePrefabs[zombieIndex], spawnPos, zombiePrefabs[zombieIndex].transform.rotation);
-        
-
+        }
     }
 }

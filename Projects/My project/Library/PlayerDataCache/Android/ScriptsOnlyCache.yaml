@@ -4,9 +4,11 @@ ScriptsOnlyBuild:
     - AudioEnemy
     - AudioPlayer
     - CapacityUnrise
+    - Dondestroy
     - EnemyFollow
     - FloatingJoystick
     - HealBar
+    - Loaddata
     - MoveWeapon
     - MovementPlayer
     - SpawnBall
@@ -112,18 +114,9 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.Slider/SliderEvent
     - UnityEngine.UI.SpriteState
-  methodsToPreserve:
-  - assembly: Assembly-CSharp
-    fullTypeName: SpawnManager
-    methodName: NextWave
-  - assembly: Assembly-CSharp
-    fullTypeName: MovementPlayer
-    methodName: OnPunchButton
-  - assembly: Assembly-CSharp
-    fullTypeName: WeaponSwitching
-    methodName: OnOffSwitchButton
+  methodsToPreserve: []
   sceneClasses:
-    Assets/1.MY GAME/Scenes/MainScene.unity:
+    Assets/1.MY GAME/Scenes/Day01.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -191,51 +184,55 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3000}
     - Class: 114
-      Script: {instanceID: 3322}
+      Script: {instanceID: 3064}
     - Class: 114
-      Script: {instanceID: 3798}
+      Script: {instanceID: 3324}
     - Class: 114
-      Script: {instanceID: 4050}
+      Script: {instanceID: 3724}
     - Class: 114
-      Script: {instanceID: 4214}
+      Script: {instanceID: 3802}
     - Class: 114
-      Script: {instanceID: 4508}
+      Script: {instanceID: 4054}
     - Class: 114
-      Script: {instanceID: 4514}
+      Script: {instanceID: 4218}
     - Class: 114
-      Script: {instanceID: 4804}
+      Script: {instanceID: 4512}
     - Class: 114
-      Script: {instanceID: 5220}
+      Script: {instanceID: 4518}
     - Class: 114
-      Script: {instanceID: 5262}
+      Script: {instanceID: 4808}
     - Class: 114
-      Script: {instanceID: 5542}
+      Script: {instanceID: 5224}
     - Class: 114
-      Script: {instanceID: 5610}
+      Script: {instanceID: 5266}
     - Class: 114
-      Script: {instanceID: 5626}
+      Script: {instanceID: 5546}
     - Class: 114
-      Script: {instanceID: 6214}
+      Script: {instanceID: 5614}
     - Class: 114
-      Script: {instanceID: 6246}
+      Script: {instanceID: 5630}
     - Class: 114
-      Script: {instanceID: 6434}
+      Script: {instanceID: 6218}
     - Class: 114
-      Script: {instanceID: 7210}
+      Script: {instanceID: 6250}
     - Class: 114
-      Script: {instanceID: 7304}
+      Script: {instanceID: 6438}
     - Class: 114
-      Script: {instanceID: 7370}
+      Script: {instanceID: 7214}
     - Class: 114
-      Script: {instanceID: 7632}
+      Script: {instanceID: 7308}
     - Class: 114
-      Script: {instanceID: 7978}
+      Script: {instanceID: 7374}
     - Class: 114
-      Script: {instanceID: 7980}
+      Script: {instanceID: 7636}
     - Class: 114
-      Script: {instanceID: 8516}
+      Script: {instanceID: 7982}
     - Class: 114
-      Script: {instanceID: 8806}
+      Script: {instanceID: 7984}
+    - Class: 114
+      Script: {instanceID: 8520}
+    - Class: 114
+      Script: {instanceID: 8810}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -273,6 +270,378 @@ ScriptsOnlyBuild:
     - Class: 243
       Script: {instanceID: 0}
     - Class: 245
+      Script: {instanceID: 0}
+    Assets/1.MY GAME/Scenes/Day02.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1550}
+    - Class: 114
+      Script: {instanceID: 2456}
+    - Class: 114
+      Script: {instanceID: 2714}
+    - Class: 114
+      Script: {instanceID: 2784}
+    - Class: 114
+      Script: {instanceID: 2852}
+    - Class: 114
+      Script: {instanceID: 3000}
+    - Class: 114
+      Script: {instanceID: 3064}
+    - Class: 114
+      Script: {instanceID: 3324}
+    - Class: 114
+      Script: {instanceID: 3724}
+    - Class: 114
+      Script: {instanceID: 3802}
+    - Class: 114
+      Script: {instanceID: 4054}
+    - Class: 114
+      Script: {instanceID: 5224}
+    - Class: 114
+      Script: {instanceID: 5266}
+    - Class: 114
+      Script: {instanceID: 5546}
+    - Class: 114
+      Script: {instanceID: 5614}
+    - Class: 114
+      Script: {instanceID: 5630}
+    - Class: 114
+      Script: {instanceID: 6218}
+    - Class: 114
+      Script: {instanceID: 6250}
+    - Class: 114
+      Script: {instanceID: 6438}
+    - Class: 114
+      Script: {instanceID: 7214}
+    - Class: 114
+      Script: {instanceID: 7636}
+    - Class: 114
+      Script: {instanceID: 7984}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 238
+      Script: {instanceID: 0}
+    Assets/1.MY GAME/Scenes/Day03.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1550}
+    - Class: 114
+      Script: {instanceID: 2456}
+    - Class: 114
+      Script: {instanceID: 2714}
+    - Class: 114
+      Script: {instanceID: 2784}
+    - Class: 114
+      Script: {instanceID: 2852}
+    - Class: 114
+      Script: {instanceID: 3000}
+    - Class: 114
+      Script: {instanceID: 3064}
+    - Class: 114
+      Script: {instanceID: 3324}
+    - Class: 114
+      Script: {instanceID: 3724}
+    - Class: 114
+      Script: {instanceID: 3802}
+    - Class: 114
+      Script: {instanceID: 4054}
+    - Class: 114
+      Script: {instanceID: 5224}
+    - Class: 114
+      Script: {instanceID: 5266}
+    - Class: 114
+      Script: {instanceID: 5546}
+    - Class: 114
+      Script: {instanceID: 5614}
+    - Class: 114
+      Script: {instanceID: 5630}
+    - Class: 114
+      Script: {instanceID: 6218}
+    - Class: 114
+      Script: {instanceID: 6250}
+    - Class: 114
+      Script: {instanceID: 6438}
+    - Class: 114
+      Script: {instanceID: 7214}
+    - Class: 114
+      Script: {instanceID: 7636}
+    - Class: 114
+      Script: {instanceID: 7984}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 238
+      Script: {instanceID: 0}
+    Assets/1.MY GAME/Scenes/Day04.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1550}
+    - Class: 114
+      Script: {instanceID: 2456}
+    - Class: 114
+      Script: {instanceID: 2714}
+    - Class: 114
+      Script: {instanceID: 2784}
+    - Class: 114
+      Script: {instanceID: 2852}
+    - Class: 114
+      Script: {instanceID: 3000}
+    - Class: 114
+      Script: {instanceID: 3064}
+    - Class: 114
+      Script: {instanceID: 3324}
+    - Class: 114
+      Script: {instanceID: 3724}
+    - Class: 114
+      Script: {instanceID: 3802}
+    - Class: 114
+      Script: {instanceID: 4054}
+    - Class: 114
+      Script: {instanceID: 5224}
+    - Class: 114
+      Script: {instanceID: 5266}
+    - Class: 114
+      Script: {instanceID: 5546}
+    - Class: 114
+      Script: {instanceID: 5614}
+    - Class: 114
+      Script: {instanceID: 5630}
+    - Class: 114
+      Script: {instanceID: 6218}
+    - Class: 114
+      Script: {instanceID: 6250}
+    - Class: 114
+      Script: {instanceID: 6438}
+    - Class: 114
+      Script: {instanceID: 7214}
+    - Class: 114
+      Script: {instanceID: 7636}
+    - Class: 114
+      Script: {instanceID: 7984}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 238
+      Script: {instanceID: 0}
+    Assets/1.MY GAME/Scenes/Day05.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1550}
+    - Class: 114
+      Script: {instanceID: 2456}
+    - Class: 114
+      Script: {instanceID: 2714}
+    - Class: 114
+      Script: {instanceID: 2784}
+    - Class: 114
+      Script: {instanceID: 2852}
+    - Class: 114
+      Script: {instanceID: 3000}
+    - Class: 114
+      Script: {instanceID: 3064}
+    - Class: 114
+      Script: {instanceID: 3324}
+    - Class: 114
+      Script: {instanceID: 3724}
+    - Class: 114
+      Script: {instanceID: 3802}
+    - Class: 114
+      Script: {instanceID: 4054}
+    - Class: 114
+      Script: {instanceID: 5224}
+    - Class: 114
+      Script: {instanceID: 5266}
+    - Class: 114
+      Script: {instanceID: 5546}
+    - Class: 114
+      Script: {instanceID: 5614}
+    - Class: 114
+      Script: {instanceID: 5630}
+    - Class: 114
+      Script: {instanceID: 6218}
+    - Class: 114
+      Script: {instanceID: 6250}
+    - Class: 114
+      Script: {instanceID: 6438}
+    - Class: 114
+      Script: {instanceID: 7214}
+    - Class: 114
+      Script: {instanceID: 7636}
+    - Class: 114
+      Script: {instanceID: 7984}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 238
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -325,13 +694,13 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 56efd393cdbdfd4a2041c186169f4f3c
+      Hash: 051b5b92d2d46f3bcfd50a8031071733
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MovementPlayer
   - hash:
       serializedVersion: 2
-      Hash: b9a12cb75a2c2660d6437f9bc08df420
+      Hash: 7fcb9ef37df4d02aa115152262b36cea
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpawnManager
@@ -571,6 +940,12 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
+      Hash: 27e9b6b57e4b9fdf9657a0a17fc50044
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Loaddata
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -713,6 +1088,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayerQuitHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Dondestroy
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1675,5 +2056,9 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   platform: 13
   scenePathNames:
-  - Assets/1.MY GAME/Scenes/MainScene.unity
+  - Assets/1.MY GAME/Scenes/Day01.unity
+  - Assets/1.MY GAME/Scenes/Day02.unity
+  - Assets/1.MY GAME/Scenes/Day03.unity
+  - Assets/1.MY GAME/Scenes/Day04.unity
+  - Assets/1.MY GAME/Scenes/Day05.unity
   playerPath: C:/Users/fuong/OneDrive/Desktop/test.apk
