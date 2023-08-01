@@ -20,6 +20,7 @@ public class Loaddata : MonoBehaviour
         if(MovementPlayer.instance.uiPunch == null)
         {
         MovementPlayer.instance.uiPunch = GameObject.Find("DelayImagePunch");
+        MovementPlayer.instance.uiPunch.SetActive(false);
          image = GameObject.Find("HealWarning").GetComponent<Image>();
 
         }
@@ -51,10 +52,24 @@ public class Loaddata : MonoBehaviour
         }
 
 
+        if (SpawnManager.instance.buttonContinute == null)
+        {
+            SpawnManager.instance.buttonContinute = GameObject.Find("Continute").GetComponent<Button>();
+            //SpawnManager.instance.timeSpawn = GameObject.Find("Time: ").GetComponent<TextMeshProUGUI>();
+        }
+        //get component button continute.
         if (SpawnManager.instance.buttonNextWave == null)
         {
             SpawnManager.instance.buttonNextWave = GameObject.Find("ButtonNextWave").GetComponent<Button>();
             SpawnManager.instance.timeSpawn = GameObject.Find("Time: ").GetComponent<TextMeshProUGUI>();
+        }
+        //get component reware UI.
+        if (SpawnManager.instance.rewardUI == null)
+        {
+            SpawnManager.instance.rewardUI = GameObject.Find("Reward");
+            SpawnManager.instance.rewardUI.SetActive(false);
+
+            //SpawnManager.instance.timeSpawn = GameObject.Find("Time: ").GetComponent<TextMeshProUGUI>();
         }
         if(SpawnManager.instance.spawnzombie == null)
         {

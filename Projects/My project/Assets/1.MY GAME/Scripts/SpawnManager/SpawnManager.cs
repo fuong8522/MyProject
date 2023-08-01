@@ -42,6 +42,8 @@ public class SpawnManager : MonoBehaviour
     public int countWave;
     public Coroutine spawnzombie = null;
     public Button buttonNextWave;
+    public Button buttonContinute;
+    public GameObject rewardUI = null;
 
 
     public TextMeshProUGUI timeSpawn;
@@ -65,7 +67,7 @@ public class SpawnManager : MonoBehaviour
 
         if (zombieCount == 0 && check)
         {
-            if (countWave < 3)
+            if (countWave < 1)
             {
                 buttonNextWave.gameObject.SetActive(true);
                 spawnzombie = StartCoroutine(DelaySpawnZombie());
@@ -73,8 +75,8 @@ public class SpawnManager : MonoBehaviour
             else
             {
                 check = false;
-                int nextSceneIndex = SceneManager.GetActiveScene().buildIndex;
-                SceneManager.LoadScene(nextSceneIndex + 1, LoadSceneMode.Single);
+                StartCoroutine(DelayRewardUi());
+                buttonContinute.onClick.AddListener(NextScene);
             }
         }
 
@@ -95,6 +97,19 @@ public class SpawnManager : MonoBehaviour
         timeDelayCountDown = timeDelay;
         yield return new WaitForSeconds(timeDelay);
         SpawnZombie();
+    }
+
+    public IEnumerator DelayRewardUi()
+    {
+        yield return new WaitForSeconds(1);
+        rewardUI.SetActive(true);
+    }
+
+    public void NextScene()
+    {
+        //rewardUI.gameObject.SetActive(false);
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(nextSceneIndex + 1, LoadSceneMode.Single);
     }
 
     public void SpawnZombie()
