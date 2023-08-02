@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -44,6 +45,13 @@ public class MovementPlayer : MonoBehaviour
 
     //Phạm vi tấn công.
     public float attackRange = 0.1f;
+    //Coin
+    public int coin;
+    public TextMeshProUGUI textCoin;
+    //UI Coin
+    public Transform CoinNextPos;
+    //Sound Coin Collect.
+    public bool checkCollect = false;
     public static MovementPlayer Instance
     {
         get
@@ -70,6 +78,7 @@ public class MovementPlayer : MonoBehaviour
     }
     void Start()
     {
+        coin = 0;
         blood_previous = health;
         death = false;
         animator = GetComponentInChildren<Animator>();
@@ -193,7 +202,6 @@ public class MovementPlayer : MonoBehaviour
         else
         {
             checkPunch = false;
-
         }
     }
 
@@ -206,7 +214,6 @@ public class MovementPlayer : MonoBehaviour
             {
                 transform.forward = collider.transform.position - transform.position;
             }
-
         }
     }
 
@@ -221,6 +228,24 @@ public class MovementPlayer : MonoBehaviour
         {
 
             Debug.Log("check health");
+        }
+    }
+
+    public void UpdateCoin(int xCoin)
+    {
+        coin += xCoin;
+    }
+    public void UpdateUiCoin()
+    {
+        textCoin.text = coin + "";
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Coin"))
+        {
+            checkCollect = true;
+            UpdateCoin(1);
+            UpdateUiCoin();
         }
     }
 }

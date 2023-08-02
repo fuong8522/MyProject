@@ -45,7 +45,7 @@ public class SpawnManager : MonoBehaviour
     public Button buttonContinute;
     public GameObject rewardUI = null;
     public bool countCoint = false;
-    public int x = 1;
+    public int x = 0;
     public TextMeshProUGUI timeSpawn;
     public TextMeshProUGUI coin;
     void Start()
@@ -74,7 +74,7 @@ public class SpawnManager : MonoBehaviour
 
         if (zombieCount == 0 && check)
         {
-            if (countWave < 1)
+            if (countWave < 3)
             {
                 buttonNextWave.gameObject.SetActive(true);
                 spawnzombie = StartCoroutine(DelaySpawnZombie());
@@ -118,7 +118,9 @@ public class SpawnManager : MonoBehaviour
         //rewardUI.gameObject.SetActive(false);
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(nextSceneIndex + 1, LoadSceneMode.Single);
-        x = 1;
+        MovementPlayer.instance.UpdateCoin(x - 1);
+        MovementPlayer.instance.UpdateUiCoin();
+        x = 0;
         countCoint = false;
     }
 
@@ -127,11 +129,11 @@ public class SpawnManager : MonoBehaviour
         buttonNextWave.gameObject.SetActive(false);
         check = true;
         countWave++;
-        Vector3 spawnPos = new Vector3(Random.Range(-4, 4), 0, MovementPlayer.instance.transform.position.z + 23);
-        int zombieIndex = Random.Range(0, zombiePrefabs.Length);
         int numberofwave = SceneManager.GetActiveScene().buildIndex;
         for (int i = 0; i <= numberofwave; i++)
         {
+        Vector3 spawnPos = new Vector3(Random.Range(-5, 5), 0, MovementPlayer.instance.transform.position.z + Random.RandomRange(19, 30));
+        int zombieIndex = Random.Range(0, zombiePrefabs.Length);
             Instantiate(zombiePrefabs[zombieIndex], spawnPos, zombiePrefabs[zombieIndex].transform.rotation);
         }
     }

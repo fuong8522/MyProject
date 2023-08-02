@@ -430,6 +430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deadth: 1
   checkAnimationStart: 0
+  coinObject: {fileID: 1349243258180990, guid: ddb31ba479136764ba620c02e7cc5551, type: 3}
 --- !u!195 &8064737034322147213
 NavMeshAgent:
   m_ObjectHideFlags: 0

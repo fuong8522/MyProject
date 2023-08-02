@@ -11,6 +11,7 @@ public class AudioPlayer : MonoBehaviour
     public AudioClip basesound;
     public AudioClip head_hit;
     public AudioClip sound_Coin;
+    public AudioClip coinCollect;
     public List<AudioClip> clips = new List<AudioClip>();
     void Start()
     {
@@ -26,7 +27,13 @@ public class AudioPlayer : MonoBehaviour
     //Âm thanh vũ khí 1.
     void SoundBaseBall()
     {
-        playerEffect1.PlayOneShot(basesound, 0.05f);
+        playerEffect1.PlayOneShot(basesound, 0.5f);
+    }
+    //Âm thanh coin collect.
+    void SoundCollect()
+    {
+        playerEffect1.PlayOneShot(coinCollect, 1);
+
     }
     int xPrevious = 1;
     private void Update()
@@ -36,6 +43,12 @@ public class AudioPlayer : MonoBehaviour
             playerEffect1.PlayOneShot(sound_Coin, 2f);
         }
             xPrevious = SpawnManager.instance.x;
+
+        if(MovementPlayer.instance.checkCollect)
+        {
+            SoundCollect();
+            MovementPlayer.instance.checkCollect = false;
+        }
     }
 
 }

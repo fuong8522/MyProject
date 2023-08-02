@@ -55,7 +55,6 @@ public class Loaddata : MonoBehaviour
         if (SpawnManager.instance.buttonContinute == null)
         {
             SpawnManager.instance.buttonContinute = GameObject.Find("Continute").GetComponent<Button>();
-            //SpawnManager.instance.timeSpawn = GameObject.Find("Time: ").GetComponent<TextMeshProUGUI>();
         }
         //get component button continute.
         if (SpawnManager.instance.buttonNextWave == null)
@@ -63,6 +62,17 @@ public class Loaddata : MonoBehaviour
             SpawnManager.instance.buttonNextWave = GameObject.Find("ButtonNextWave").GetComponent<Button>();
             SpawnManager.instance.timeSpawn = GameObject.Find("Time: ").GetComponent<TextMeshProUGUI>();
         }
+        //get component text coin.
+        if (MovementPlayer.instance.textCoin == null)
+        {
+            MovementPlayer.instance.textCoin = GameObject.Find("textCoin").GetComponent<TextMeshProUGUI>();
+            MovementPlayer.instance.textCoin.text = MovementPlayer.instance.coin + "";
+        }
+        //get component coin next position.
+/*        if (MovementPlayer.instance.CoinNextPos == null)
+        {
+            MovementPlayer.instance.CoinNextPos = GameObject.Find("Coin").GetComponent<Transform>();
+        }*/
         //get component coint UI.
         if (true)
         {

@@ -19,6 +19,8 @@ public class EnemyFollow : MonoBehaviour
 
     public bool checkAnimationStart;
 
+    public GameObject coinObject;
+
     void Start()
     {
         checkAnimationStart = false;
@@ -107,12 +109,20 @@ public class EnemyFollow : MonoBehaviour
         if (health == 0)
         {
             deadth = true;
+            Invoke("SpawnCoin", 0.5f);
             agent.SetDestination(transform.position);
             animator.SetTrigger("Death");
             capsuleCollider.isTrigger = true;
             StartCoroutine(DelayDisActiveZombie());
             this.gameObject.tag = "Untagged";
         }
+    }
+
+    public void SpawnCoin()
+    {
+        Vector3 posCoin = transform.position;
+        posCoin.y += 0.5f;
+        Instantiate(coinObject, posCoin, Quaternion.identity);
     }
     public void NavMove()
     {

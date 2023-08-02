@@ -29,12 +29,12 @@ public class AudioEnemy : MonoBehaviour
     void FootStep()
     {
         AudioClip step = clips[Random.Range(0, clips.Count)];
-        playerEffect.PlayOneShot(step, 0.08f);
+        playerEffect.PlayOneShot(step, 0.5f);
     }
     void SoundAttack()
     {
         AudioClip attack = clips2[Random.Range(0, clips2.Count)];
-        playerEffect.PlayOneShot(attack, 0.08f);
+        playerEffect.PlayOneShot(attack, 0.5f);
 
     }
     void EffectBlood()
@@ -57,7 +57,7 @@ public class AudioEnemy : MonoBehaviour
 
     void SoundBeaten()
     {
-        playerEffect.PlayOneShot(beaten, 0.08f);
+        playerEffect.PlayOneShot(beaten, 0.7f);
     }
 
 
