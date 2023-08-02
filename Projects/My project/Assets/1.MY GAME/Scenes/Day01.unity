@@ -287,7 +287,10 @@ MonoBehaviour:
   buttonNextWave: {fileID: 536623101}
   buttonContinute: {fileID: 0}
   rewardUI: {fileID: 0}
+  countCoint: 0
+  x: 1
   timeSpawn: {fileID: 526345025}
+  coin: {fileID: 0}
 --- !u!114 &37018326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15593,5 +15596,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7275801384781590231, guid: 24d28c33f81bda348a27801eab871412, type: 3}
+      propertyPath: sound_Coin
+      value: 
+      objectReference: {fileID: 8300000, guid: 8c72cd58a0e75954983b8a768a15b300, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24d28c33f81bda348a27801eab871412, type: 3}

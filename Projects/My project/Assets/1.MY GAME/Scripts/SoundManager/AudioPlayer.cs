@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml.XPath;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -9,6 +10,7 @@ public class AudioPlayer : MonoBehaviour
     public AudioSource playerEffect2;
     public AudioClip basesound;
     public AudioClip head_hit;
+    public AudioClip sound_Coin;
     public List<AudioClip> clips = new List<AudioClip>();
     void Start()
     {
@@ -24,9 +26,16 @@ public class AudioPlayer : MonoBehaviour
     //Âm thanh vũ khí 1.
     void SoundBaseBall()
     {
-
-            playerEffect1.PlayOneShot(basesound, 0.05f);
-
+        playerEffect1.PlayOneShot(basesound, 0.05f);
+    }
+    int xPrevious = 1;
+    private void Update()
+    {
+        if(xPrevious < SpawnManager.instance.x)
+        {
+            playerEffect1.PlayOneShot(sound_Coin, 2f);
+        }
+            xPrevious = SpawnManager.instance.x;
     }
 
 }

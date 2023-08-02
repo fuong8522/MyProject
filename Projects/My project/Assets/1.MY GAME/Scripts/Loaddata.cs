@@ -63,15 +63,21 @@ public class Loaddata : MonoBehaviour
             SpawnManager.instance.buttonNextWave = GameObject.Find("ButtonNextWave").GetComponent<Button>();
             SpawnManager.instance.timeSpawn = GameObject.Find("Time: ").GetComponent<TextMeshProUGUI>();
         }
+        //get component coint UI.
+        if (true)
+        {
+            SpawnManager.instance.coin = GameObject.Find("$50").GetComponent<TextMeshProUGUI>();
+            SpawnManager.instance.x = 1;
+        }
+
         //get component reware UI.
         if (SpawnManager.instance.rewardUI == null)
         {
             SpawnManager.instance.rewardUI = GameObject.Find("Reward");
             SpawnManager.instance.rewardUI.SetActive(false);
-
-            //SpawnManager.instance.timeSpawn = GameObject.Find("Time: ").GetComponent<TextMeshProUGUI>();
         }
-        if(SpawnManager.instance.spawnzombie == null)
+
+        if (SpawnManager.instance.spawnzombie == null)
         {
             SpawnManager.instance.countWave = 0;
             SpawnManager.instance.check = true;
