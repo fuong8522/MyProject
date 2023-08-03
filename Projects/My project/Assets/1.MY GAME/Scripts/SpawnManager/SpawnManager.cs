@@ -108,7 +108,7 @@ public class SpawnManager : MonoBehaviour
 
     public IEnumerator DelayRewardUi()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         rewardUI.SetActive(true);
         countCoint = true;
     }

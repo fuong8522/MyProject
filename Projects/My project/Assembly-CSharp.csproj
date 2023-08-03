@@ -59,6 +59,7 @@
     <Compile Include="Assets\1.MY GAME\Scripts\Player\MovementPlayer.cs" />
     <Compile Include="Assets\1.MY GAME\Scripts\SpawnManager\SpawnManager.cs" />
     <Compile Include="Assets\1.MY GAME\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
+    <Compile Include="Assets\1.MY GAME\Scripts\Weapon\MoveCoin.cs" />
     <Compile Include="Assets\1.MY GAME\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\EffectBlood\packs\WebDemoAssets\scripts\CameraShake.cs" />
     <Compile Include="Assets\1.MY GAME\Scripts\Player\HealBar.cs" />
@@ -84,7 +85,9 @@
     <Compile Include="Assets\1.MY GAME\Scripts\Camera\CamManager.cs" />
     <Compile Include="Assets\EffectBlood\scripts\particleColorChangerMaster.cs" />
     <Compile Include="Assets\1.MY GAME\Scripts\Player\WeaponSwitching.cs" />
-    <Compile Include="Assets\1.MY GAME\Scripts\Weapon\MoveCoin.cs" />
+    <Compile Include="Assets\1.MY GAME\Scripts\UI\MainMenu.cs" />
+    <Compile Include="Assets\1.MY GAME\Scripts\UI\Setting.cs" />
+    <Compile Include="Assets\1.MY GAME\Scripts\UI\Pause.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
